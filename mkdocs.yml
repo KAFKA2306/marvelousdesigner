@@ -48,6 +48,7 @@ nav:
     - Unity・VRChat SDK設定: setup/unity-vrchat-setup.md
   - 基礎知識:
     - Marvelous Designerインターフェース: basics/md-interface.md
+    - AI機能ガイド: basics/ai-features.md
     - 3Dモデリング基本概念: basics/basic-concepts.md
     - 制作工程全体像: basics/workflow-overview.md
     - ファイル形式の理解: basics/file-formats.md
@@ -55,6 +56,8 @@ nav:
   - 作業手順:
     - アバターの読み込み: workflows/avatar-import.md
     - 衣装のフィッティング: workflows/garment-fitting.md
+    - モジュラー衣装システム: workflows/modular-garments.md
+    - 非対応アバター改変: workflows/avatar-modification.md
     - 新規衣装制作手順: workflows/new-garment-creation.md
     - よくある問題と対処: workflows/common-issues.md
   - 衣装別制作ガイド:
@@ -76,6 +79,7 @@ nav:
     - VRChat内テスト: unity/testing.md
   - リソース・参考資料:
     - 有用なリンク集: resources/useful-links.md
+    - CLO-SET Connect・EveryWear: resources/clo-set-connect.md
     - コミュニティ情報: resources/community.md
     - 上級者向けリソース: resources/advanced-resources.md
     - 更新履歴: resources/update-log.md

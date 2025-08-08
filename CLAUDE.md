@@ -6,26 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a **Japanese-language VRChat garment creation guide** built with MkDocs. It provides comprehensive documentation for creating VRChat avatar clothing using Marvelous Designer and Unity, targeting complete beginners.
 
-## Project Structure
-
-```
-/
-├── mkdocs.yml              # MkDocs configuration
-├── docs/                   # Main documentation content
-│   ├── setup/             # Environment setup guides
-│   ├── basics/            # Basic concepts and interface
-│   ├── workflows/         # Step-by-step procedures
-│   ├── garments/          # Clothing-specific tutorials
-│   ├── physics/           # Physics simulation settings
-│   ├── unity/             # Unity integration guides
-│   └── resources/         # Links and community resources
-├── design.md              # Technical design document
-└── requirements.md        # Project requirements
-```
-
 ## Development Commands
 
-### Build and Serve Documentation
+### MkDocs Operations
 ```bash
 # Start development server (auto-reload on changes)
 mkdocs serve
@@ -35,69 +18,113 @@ mkdocs build
 
 # Deploy to GitHub Pages
 mkdocs gh-deploy
-```
 
-### Check Dependencies
-```bash
 # Show required packages for current configuration
 mkdocs get-deps
 ```
 
-## Content Guidelines
+## Project Architecture
 
-### Language and Audience
-- **Language**: Japanese only - all content must be in Japanese
-- **Target Audience**: Complete beginners to VRChat garment creation
-- **Software Focus**: Marvelous Designer + Unity + VRChat SDK3
+This is a **documentation-only project** with no executable code. The system is designed around:
 
-### Content Structure
-Each garment guide follows this pattern:
-- Difficulty level and time estimate
-- Prerequisites and required materials
-- Step-by-step instructions (5 main phases)
-- Troubleshooting tips specific to that garment type
-- Next steps for advancement
+### Content Organization
+```
+docs/
+├── index.md                    # Welcome page with learning paths
+├── setup/                      # Environment setup (3 files)
+│   ├── software-check.md       # Installation verification
+│   ├── md-first-launch.md      # Marvelous Designer first run
+│   └── unity-vrchat-setup.md   # Unity + VRChat SDK setup
+├── basics/                     # Foundational concepts
+│   └── md-interface.md         # Marvelous Designer interface
+├── workflows/                  # Core procedures (4 files)
+│   ├── avatar-import.md        # FBX avatar import process
+│   └── garment-fitting.md      # PZIP garment adaptation
+├── garments/                   # Clothing tutorials (2+ files)
+│   ├── t-shirt.md              # Beginner: basic shirt creation
+│   └── skirt.md                # Intermediate: pleats and flares
+├── physics/                    # Simulation settings (2 files)
+│   ├── fabric-properties.md    # Material physics configuration
+│   └── optimization.md         # Performance tuning
+├── unity/                      # VRChat integration (2 files)
+│   ├── project-setup.md        # Unity project configuration
+│   └── avatar-upload.md        # VRChat avatar upload
+└── resources/                  # Links and community info
+```
 
-### Key Content Areas
-1. **Software Setup**: Installation and first-time configuration
-2. **Basic Concepts**: 3D modeling fundamentals for beginners
-3. **Workflows**: Standardized procedures for avatar import, fitting, creation
-4. **Garment Tutorials**: T-shirts → Skirts → Dresses → Advanced items
-5. **Physics Configuration**: Fabric properties and simulation optimization
-6. **Unity Integration**: VRChat SDK3 setup and avatar upload process
+### Learning Architecture
+1. **Progressive Difficulty**: Content flows from basic setup → simple creation → complex garments → optimization
+2. **Modular Structure**: Each section can be referenced independently while maintaining learning flow  
+3. **Cross-Reference Network**: Heavy internal linking between related concepts across sections
+4. **Japanese-First Design**: All terminology, navigation, and explanations optimized for Japanese beginners
 
-## Technical Configuration
+### Content Design Patterns
+- **Standardized Tutorial Format**: Each garment follows consistent 5-phase structure (design → placement → simulation → adjustment → export)
+- **Time Estimates**: Realistic completion times for each section (15min - 12 hours)
+- **Difficulty Indicators**: Clear skill level markers for each tutorial
+- **Error Prevention**: Proactive warnings about common mistakes before they occur
 
-### MkDocs Theme
-- Uses Material theme with Japanese localization
-- Pink color scheme with light/dark mode toggle
-- Japanese font: Noto Sans JP
-- Mobile-responsive design
+## MkDocs Configuration
+
+### Theme Features
+- Material theme with Japanese language support (`language: ja`)
+- Dual color scheme (light/dark) with pink primary colors
+- Japanese fonts: Noto Sans JP for text, Roboto Mono for code
+- Custom HTML template in `overrides/main.html` for Google verification
 
 ### Key Plugins
-- `search`: Japanese language search
-- `git-revision-date-localized`: Japanese date formatting
-- `minify`: HTML optimization
+```yaml
+plugins:
+  - search:
+      lang: ja                          # Japanese search indexing
+  - git-revision-date-localized:
+      type: date
+      locale: ja                        # Japanese date formatting
+      timezone: Asia/Tokyo
+```
 
-### Markdown Extensions
-- Admonitions for tips/warnings
-- Code highlighting
-- Tabbed content
-- Task lists
-- Japanese table of contents
+### Critical Markdown Extensions
+- `admonition` + `pymdownx.details`: Collapsible tips/warnings
+- `pymdownx.tabbed`: Multiple learning path presentations  
+- `pymdownx.superfences`: Code blocks with syntax highlighting
+- `toc`: Japanese table of contents generation
+- `pymdownx.tasklist`: Interactive checklists for progress tracking
 
-## Architecture Notes
+## Content Guidelines
 
-This is a **documentation-only project** - no executable code. The architecture centers around:
+### Language Requirements
+- **Japanese Only**: All content must be in Japanese
+- **Beginner-Friendly**: No assumed prior knowledge of 3D modeling or VRChat
+- **Natural Phrasing**: Avoid direct translations; use naturally Japanese explanations
+- **Consistent Terminology**: Standard Japanese terms for technical concepts
 
-1. **Hierarchical Learning Path**: Content progresses from basic setup to advanced techniques
-2. **Modular Guide Structure**: Each clothing type is self-contained but references common workflows
-3. **Cross-Reference System**: Heavy linking between related concepts across different sections
-4. **Japanese UX Optimization**: Navigation and terminology designed specifically for Japanese users
+### Writing Patterns  
+- **Question-Based Sections**: Address common anxieties ("私にもできるかな？")
+- **Step-by-Step Instructions**: Numbered procedures with time estimates
+- **Safety-First Approach**: Always explain how to undo/recover from errors
+- **Version Awareness**: Track specific software versions (current: MD 2025, Unity 2022.3.22f1, VRChat SDK3 v3.8.2)
 
-## Important Context
+### Structure Requirements
+Each tutorial must include:
+- Difficulty level and time estimate
+- Prerequisites and file requirements  
+- 5-phase step-by-step process
+- Common troubleshooting points
+- Next learning steps
 
-- **No executable code**: This project contains only Markdown documentation and MkDocs configuration
-- **Image-light approach**: Relies on detailed text descriptions rather than screenshots
-- **Beginner-focused**: Every concept explained from first principles
-- **Version-aware**: Tracks latest software versions (Marvelous Designer, Unity, VRChat SDK3)
+## Technical Details
+
+### File Organization
+- `mkdocs.yml`: Complete site configuration with Japanese localization
+- `docs/javascripts/extra.js`: Custom JavaScript for enhanced UX
+- `docs/stylesheets/extra.css`: Custom CSS for Japanese-optimized design
+- `site/`: Generated static files (auto-built)
+- `overrides/`: Template customizations
+
+### External Dependencies
+- Google Analytics integration (configured but anonymized ID)
+- GitHub Pages deployment ready
+- Social media links (GitHub repository)
+
+### Development Workflow
+This project requires no compilation or testing. Changes to `.md` files in `docs/` are immediately reflected via `mkdocs serve`. The content architecture supports both sequential learning (beginner path) and reference-style access (experienced users jumping to specific sections).
