@@ -7,6 +7,7 @@ site_url: https://username.github.io/vrchat-garment-guide
 theme:
   name: material
   language: ja
+  custom_dir: overrides
   features:
     - navigation.tabs
     - navigation.sections
