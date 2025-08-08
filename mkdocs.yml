@@ -87,8 +87,6 @@ plugins:
       type: date
       locale: ja
       timezone: Asia/Tokyo
-  - minify:
-      minify_html: true
 
 # Markdown拡張機能
 markdown_extensions:
