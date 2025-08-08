@@ -1,0 +1,121 @@
+/* 日本語フォント最適化 */
+:root {
+  --md-text-font: "Noto Sans JP", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+}
+
+/* 日本語テキストの行間調整 */
+.md-content {
+  line-height: 1.8;
+}
+
+/* 見出しの調整 */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* 警告・情報ボックスのスタイル */
+.md-typeset .admonition.warning {
+  border-color: #ff9800;
+}
+
+.md-typeset .admonition.info {
+  border-color: #2196f3;
+}
+
+.md-typeset .admonition.tip {
+  border-color: #4caf50;
+}
+
+/* ステップバイステップガイド用のスタイル */
+.step-container {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-left: 4px solid #e91e63;
+  background-color: rgba(233, 30, 99, 0.05);
+}
+
+.step-number {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #e91e63;
+  margin-bottom: 0.5rem;
+}
+
+/* 難易度レベル表示 */
+.difficulty-beginner {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.difficulty-intermediate {
+  background-color: #ff9800;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.difficulty-advanced {
+  background-color: #f44336;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* 時間目安表示 */
+.time-estimate {
+  background-color: #2196f3;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+/* ソフトウェアバージョン表示 */
+.software-version {
+  background-color: #9c27b0;
+  color: white;
+  padding: 0.1rem 0.4rem;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: normal;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* 進捗チェックリスト */
+.progress-checklist {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.progress-checklist h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* レスポンシブ調整 */
+@media screen and (max-width: 768px) {
+  .md-content {
+    line-height: 1.7;
+  }
+  
+  .step-container {
+    margin: 1rem 0;
+    padding: 0.8rem;
+  }
+}

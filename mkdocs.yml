@@ -1,0 +1,153 @@
+site_name: VRChat衣装制作完全ガイド
+site_description: Marvelous DesignerとUnityを使ったVRChat衣装制作の完全初心者向けガイド
+site_author: VRChat Garment Creation Team
+site_url: https://username.github.io/vrchat-garment-guide
+
+# 日本語対応テーマ設定
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    # ライトモード
+    - scheme: default
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: ダークモードに切り替え
+    # ダークモード
+    - scheme: slate
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: ライトモードに切り替え
+  font:
+    text: 'Noto Sans JP'
+    code: 'Roboto Mono'
+  icon:
+    repo: fontawesome/brands/github
+
+# ナビゲーション構造
+nav:
+  - ホーム: index.md
+  - 環境設定:
+    - ソフトウェア確認: setup/software-check.md
+    - Marvelous Designer初回起動: setup/md-first-launch.md
+    - Unity・VRChat SDK設定: setup/unity-vrchat-setup.md
+  - 基礎知識:
+    - Marvelous Designerインターフェース: basics/md-interface.md
+    - 3Dモデリング基本概念: basics/basic-concepts.md
+    - 制作工程全体像: basics/workflow-overview.md
+    - ファイル形式の理解: basics/file-formats.md
+    - 専門用語集: basics/terminology.md
+  - 作業手順:
+    - アバターの読み込み: workflows/avatar-import.md
+    - 衣装のフィッティング: workflows/garment-fitting.md
+    - 新規衣装制作手順: workflows/new-garment-creation.md
+    - よくある問題と対処: workflows/common-issues.md
+  - 衣装別制作ガイド:
+    - Tシャツ（初心者向け）: garments/t-shirt.md
+    - スカート: garments/skirt.md
+    - ドレス: garments/dress.md
+    - カジュアル服: garments/casual-wear.md
+    - ワンピース: garments/one-piece.md
+    - 水着: garments/swimwear.md
+  - 物理設定・最適化:
+    - 布の物理特性設定: physics/fabric-properties.md
+    - シミュレーション詳細設定: physics/simulation-settings.md
+    - 衝突検出の調整: physics/collision-detection.md
+    - パフォーマンス最適化: physics/optimization.md
+  - Unity統合:
+    - Unityプロジェクト設定: unity/project-setup.md
+    - VRChat SDK3設定: unity/vrchat-sdk3.md
+    - アバターアップロード: unity/avatar-upload.md
+    - VRChat内テスト: unity/testing.md
+  - リソース・参考資料:
+    - 有用なリンク集: resources/useful-links.md
+    - コミュニティ情報: resources/community.md
+    - 上級者向けリソース: resources/advanced-resources.md
+    - 更新履歴: resources/update-log.md
+
+# プラグイン設定
+plugins:
+  - search:
+      lang: ja
+  - git-revision-date-localized:
+      type: date
+      locale: ja
+      timezone: Asia/Tokyo
+  - minify:
+      minify_html: true
+
+# Markdown拡張機能
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      title: このページの内容
+  - tables
+  - footnotes
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# 追加CSS・JavaScript
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+
+# サイト情報
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/username/vrchat-garment-guide
+      name: GitHub Repository
+  version:
+    provider: mike
+    default: latest
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+
+# 著作権情報
+copyright: Copyright &copy; 2024-2025 VRChat Garment Creation Guide
+
+# リポジトリ情報（GitHub Pages用）
+repo_url: https://github.com/username/vrchat-garment-guide
+repo_name: vrchat-garment-guide
+edit_uri: edit/main/docs/
