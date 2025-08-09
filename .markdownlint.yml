@@ -1,0 +1,113 @@
+# Markdownlint設定 - 日本語文書用に最適化
+# 参考: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+# デフォルトで有効な全ルール
+default: true
+
+# 個別ルールの設定
+MD001: true   # ヘッダーレベルの順序（段階的に増加）
+MD002: false  # ファーストヘッダー - 日本語文書では柔軟に
+MD003:        # ヘッダースタイル
+  style: "atx"  # # ## ### 形式を使用
+
+MD004:        # 順序なしリスト
+  style: "dash"  # - を使用（日本語では見やすい）
+
+MD005: true   # リストのインデント一貫性
+MD006: false  # 順序なしリストの先頭レベル - 日本語文書では柔軟に
+MD007:        # 順序なしリストのインデント
+  indent: 2   # 2スペースインデント
+
+MD009:        # 行末スペース
+  br_spaces: 0  # 改行用スペースも削除
+
+MD010:        # ハードタブ
+  code_blocks: false  # コードブロック内のタブは許可
+
+MD011: true   # リンク記法の誤用
+MD012:        # 連続空行
+  maximum: 2    # 最大2行の連続空行を許可
+
+MD013:        # 行の長さ制限
+  line_length: 100        # 日本語では100文字
+  code_blocks: false      # コードブロックは除外
+  tables: false          # テーブルは除外
+  headings: false        # ヘッダーは除外
+
+MD014: false  # ドル記号を使ったコマンド例 - 日本語文書では使用
+MD018: true   # ATXヘッダーの前にスペース不要
+MD019: true   # ATXヘッダーの前の複数スペース禁止
+MD020: true   # 閉じATXヘッダーの内側スペース
+MD021: true   # 閉じATXヘッダーの外側スペース
+MD022:        # ヘッダー前後の空行
+  lines_above: 1
+  lines_below: 1
+
+MD023: true   # ヘッダーのインデント禁止
+MD024:        # 重複ヘッダー
+  allow_different_nesting: true  # 異なる階層では許可
+
+MD025:        # H1の複数使用
+  front_matter_title: ""  # フロントマターのタイトル考慮
+
+MD026:        # ヘッダーの句読点
+  punctuation: ".,;:!?"  # 日本語句読点も含める
+
+MD027: true   # 複数の空白によるブロッククォート
+MD028: true   # ブロッククォート内の空行
+MD029:        # 順序付きリストの番号
+  style: "ordered"  # 順番通りの番号
+
+MD030:        # リスト項目間のスペース
+  ul_single: 1    # 単一行項目: 1スペース
+  ol_single: 1    # 単一行項目: 1スペース
+  ul_multi: 1     # 複数行項目: 1スペース
+  ol_multi: 1     # 複数行項目: 1スペース
+
+MD031: true   # フェンスコードブロックの空行
+MD032: true   # リスト前後の空行
+MD033:        # インラインHTML
+  allowed_elements: [
+    "br", "sub", "sup", "kbd", "mark", "ruby", "rt", "rp",  # 基本要素
+    "div", "span", "p", "a",                                # レイアウト要素  
+    "details", "summary",                                   # 折りたたみ
+    "img", "video", "iframe"                               # メディア要素
+  ]
+
+MD034: true   # リンクのURL直書き禁止
+MD035: true   # 水平ルールスタイル統一
+MD036:        # 強調の代わりのヘッダー
+  punctuation: ".,;:!?。、"  # 日本語句読点も含める
+
+MD037: true   # 強調内のスペース
+MD038: true   # コード内のスペース
+MD039: true   # リンク内のスペース
+MD040: true   # フェンスコードブロックの言語指定
+MD041:        # ファーストライン見出し
+  front_matter_title: ""  # フロントマター考慮
+
+MD042: true   # リンク先の空要素禁止
+MD043: false  # 必須ヘッダー構造 - 日本語文書では柔軟に
+MD044:        # 大文字小文字の用語統一
+  names: [
+    "Marvelous Designer", "Unity", "VRChat", "GitHub",
+    "JavaScript", "Python", "HTML", "CSS", "Markdown",
+    "VRChat SDK", "CLO-SET", "FBX"
+  ]
+  code_blocks: false
+
+MD045: true   # 画像の代替テキスト
+MD046:        # コードブロックスタイル
+  style: "fenced"  # フェンス形式を推奨
+
+MD047: true   # ファイル末尾の改行
+MD048: true   # フェンスコードブロックスタイル統一
+MD049:        # 強調スタイル
+  style: "asterisk"  # * を使用
+
+MD050:        # 太字スタイル
+  style: "asterisk"  # ** を使用
+
+MD051: true   # リンク断片化
+MD052: true   # 参照リンク定義の順序
+MD053: true   # リンクラベルの定義

@@ -270,7 +270,7 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 
 **ツール選択**:
 - **A**: Arrow（選択ツール）
-- **R**: Rectangle（四角形ツール）  
+- **R**: Rectangle（四角形ツール）
 - **C**: Circle（円ツール）
 
 !!! success "ショートカットのメリット"

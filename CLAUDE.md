@@ -54,7 +54,7 @@ docs/
 
 ### Learning Architecture
 1. **Progressive Difficulty**: Content flows from basic setup → simple creation → complex garments → optimization
-2. **Modular Structure**: Each section can be referenced independently while maintaining learning flow  
+2. **Modular Structure**: Each section can be referenced independently while maintaining learning flow
 3. **Cross-Reference Network**: Heavy internal linking between related concepts across sections
 4. **Japanese-First Design**: All terminology, navigation, and explanations optimized for Japanese beginners
 
@@ -85,7 +85,7 @@ plugins:
 
 ### Critical Markdown Extensions
 - `admonition` + `pymdownx.details`: Collapsible tips/warnings
-- `pymdownx.tabbed`: Multiple learning path presentations  
+- `pymdownx.tabbed`: Multiple learning path presentations
 - `pymdownx.superfences`: Code blocks with syntax highlighting
 - `toc`: Japanese table of contents generation
 - `pymdownx.tasklist`: Interactive checklists for progress tracking
@@ -98,7 +98,7 @@ plugins:
 - **Natural Phrasing**: Avoid direct translations; use naturally Japanese explanations
 - **Consistent Terminology**: Standard Japanese terms for technical concepts
 
-### Writing Patterns  
+### Writing Patterns
 - **Question-Based Sections**: Address common anxieties ("私にもできるかな？")
 - **Step-by-Step Instructions**: Numbered procedures with time estimates
 - **Safety-First Approach**: Always explain how to undo/recover from errors
@@ -107,7 +107,7 @@ plugins:
 ### Structure Requirements
 Each tutorial must include:
 - Difficulty level and time estimate
-- Prerequisites and file requirements  
+- Prerequisites and file requirements
 - 5-phase step-by-step process
 - Common troubleshooting points
 - Next learning steps

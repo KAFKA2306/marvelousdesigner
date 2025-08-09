@@ -86,7 +86,7 @@ The project runs on:
 ```
 docs/                    # All content files
 ├── setup/              # Environment setup guides
-├── basics/             # Foundation knowledge  
+├── basics/             # Foundation knowledge
 ├── workflows/          # Core procedures
 ├── garments/           # Clothing tutorials
 ├── physics/            # Simulation settings

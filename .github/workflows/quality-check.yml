@@ -1,0 +1,417 @@
+name: Documentation Quality Check
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths: [ 'docs/**', 'mkdocs.yml', 'overrides/**' ]
+  pull_request:
+    branches: [ main, develop ]
+    paths: [ 'docs/**', 'mkdocs.yml', 'overrides/**' ]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: quality-check-${{ hashFiles('**/requirements.txt', '.github/workflows/quality-check.yml') }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs-material
+          pip install mkdocs-git-revision-date-localized-plugin
+          pip install beautifulsoup4
+          pip install lxml
+          pip install html5lib
+          pip install markdown
+          pip install pymdown-extensions
+
+      - name: Create quality check script
+        run: |
+          cat > quality_check.py << 'EOF'
+          #!/usr/bin/env python3
+          """
+          MkDocs文書品質チェックスクリプト
+          
+          検出するエラー:
+          - 改行ずれ（連続改行、不適切な改行）
+          - Markdownが適用されていない箇所
+          - HTMLタグ内でMarkdownが崩れる
+          - *や-が変換されていない
+          - 改行されない問題
+          """
+          
+          import os
+          import re
+          import sys
+          import json
+          import subprocess
+          from pathlib import Path
+          from bs4 import BeautifulSoup
+          import markdown
+          from markdown.extensions import admonition, toc, tables, attr_list, md_in_html
+          from pymdownx import superfences, details, tabbed, tasklist, highlight, inlinehilite, snippets, critic, caret, keys, mark, tilde, emoji
+          
+          class QualityChecker:
+              def __init__(self):
+                  self.errors = []
+                  self.warnings = []
+                  self.markdown_processor = markdown.Markdown(
+                      extensions=[
+                          'admonition',
+                          'pymdownx.details', 
+                          'pymdownx.superfences',
+                          'pymdownx.highlight',
+                          'pymdownx.inlinehilite',
+                          'pymdownx.snippets',
+                          'pymdownx.tabbed',
+                          'pymdownx.tasklist',
+                          'attr_list',
+                          'md_in_html',
+                          'toc',
+                          'tables',
+                          'footnotes',
+                          'pymdownx.critic',
+                          'pymdownx.caret',
+                          'pymdownx.keys',
+                          'pymdownx.mark',
+                          'pymdownx.tilde',
+                          'pymdownx.emoji'
+                      ]
+                  )
+                  
+              def check_line_breaks(self, content, filepath):
+                  """改行ずれの検出"""
+                  lines = content.split('\n')
+                  
+                  # 連続する空行（3行以上）
+                  empty_count = 0
+                  for i, line in enumerate(lines):
+                      if line.strip() == '':
+                          empty_count += 1
+                      else:
+                          if empty_count >= 3:
+                              self.errors.append({
+                                  'type': 'excessive_blank_lines',
+                                  'file': filepath,
+                                  'line': i - empty_count + 1,
+                                  'message': f'{empty_count}行の連続空行があります',
+                                  'severity': 'warning'
+                              })
+                          empty_count = 0
+                  
+                  # 行末の不要なスペース
+                  for i, line in enumerate(lines):
+                      if line.rstrip() != line:
+                          self.errors.append({
+                              'type': 'trailing_whitespace',
+                              'file': filepath,
+                              'line': i + 1,
+                              'message': '行末に不要なスペースがあります',
+                              'severity': 'error'
+                          })
+                  
+                  # リスト項目の改行不備
+                  for i, line in enumerate(lines):
+                      if re.match(r'^[\s]*[-*+]\s', line):
+                          # リスト項目の次の行をチェック
+                          if i + 1 < len(lines) and lines[i + 1].strip() != '':
+                              if not re.match(r'^[\s]*[-*+]\s', lines[i + 1]) and not lines[i + 1].startswith('  '):
+                                  self.warnings.append({
+                                      'type': 'list_formatting',
+                                      'file': filepath,
+                                      'line': i + 2,
+                                      'message': 'リスト項目の継続行のインデントが不適切です',
+                                      'severity': 'warning'
+                                  })
+          
+              def check_markdown_conversion(self, content, filepath):
+                  """Markdown変換の問題を検出"""
+                  
+                  # 未変換の*強調*
+                  asterisk_pattern = r'(?<!\*)\*([^*\n]+)\*(?!\*)'
+                  matches = re.finditer(asterisk_pattern, content)
+                  for match in matches:
+                      line_num = content[:match.start()].count('\n') + 1
+                      # HTMLタグ内やコードブロック内は除外
+                      if not self._is_in_code_block(content, match.start()) and not self._is_in_html_tag(content, match.start()):
+                          self.warnings.append({
+                              'type': 'potential_markdown_issue',
+                              'file': filepath,
+                              'line': line_num,
+                              'message': f'強調記法が正しく変換されていない可能性: {match.group()}',
+                              'severity': 'warning'
+                          })
+                  
+                  # 未変換の-リスト-
+                  list_pattern = r'^[\s]*-\s+(?![*-]\s)'
+                  for i, line in enumerate(content.split('\n')):
+                      if re.match(list_pattern, line):
+                          # 前後の行をチェックしてリスト構造が適切か確認
+                          lines = content.split('\n')
+                          if i > 0 and i < len(lines) - 1:
+                              prev_line = lines[i-1].strip()
+                              next_line = lines[i+1].strip()
+                              
+                              # リスト前後の空行チェック
+                              if prev_line != '' and not re.match(r'^[\s]*[-*+]\s', prev_line):
+                                  if prev_line and not prev_line.endswith(':'):
+                                      self.warnings.append({
+                                          'type': 'list_spacing',
+                                          'file': filepath,
+                                          'line': i + 1,
+                                          'message': 'リスト項目の前に空行が必要かもしれません',
+                                          'severity': 'info'
+                                      })
+              
+              def check_html_markdown_conflicts(self, content, filepath):
+                  """HTMLタグ内のMarkdown崩れを検出"""
+                  
+                  # HTMLタグ内のMarkdown記法を検出
+                  html_tag_pattern = r'<([^>]+)>(.*?)</\1>'
+                  matches = re.finditer(html_tag_pattern, content, re.DOTALL)
+                  
+                  for match in matches:
+                      tag_content = match.group(2)
+                      if re.search(r'[*_`#]', tag_content):
+                          line_num = content[:match.start()].count('\n') + 1
+                          self.errors.append({
+                              'type': 'html_markdown_conflict',
+                              'file': filepath,
+                              'line': line_num,
+                              'message': f'HTMLタグ内にMarkdown記法があります: {match.group(1)}',
+                              'severity': 'error'
+                          })
+              
+              def check_hardline_breaks(self, content, filepath):
+                  """改行されない問題を検出"""
+                  lines = content.split('\n')
+                  
+                  for i, line in enumerate(lines):
+                      # 長すぎる行（日本語では80文字程度が目安）
+                      if len(line) > 100:
+                          # コードブロックや表は除外
+                          if not line.strip().startswith('|') and not line.strip().startswith('    '):
+                              self.warnings.append({
+                                  'type': 'long_line',
+                                  'file': filepath,
+                                  'line': i + 1,
+                                  'message': f'行が長すぎます ({len(line)}文字)',
+                                  'severity': 'info'
+                              })
+                      
+                      # 文末にピリオドがあるのに改行がない
+                      if re.search(r'。\s*[^\s]', line):
+                          self.warnings.append({
+                              'type': 'missing_line_break',
+                              'file': filepath,
+                              'line': i + 1,
+                              'message': '文末の後に改行がありません',
+                              'severity': 'info'
+                          })
+              
+              def _is_in_code_block(self, content, position):
+                  """指定位置がコードブロック内かどうか判定"""
+                  before_content = content[:position]
+                  code_blocks = re.findall(r'```.*?```', before_content, re.DOTALL)
+                  inline_codes = re.findall(r'`[^`]*`', before_content)
+                  
+                  # 簡易的な判定（より精密な実装が必要な場合あり）
+                  return '```' in before_content.split('\n')[-1] or '`' in before_content.split('\n')[-1]
+              
+              def _is_in_html_tag(self, content, position):
+                  """指定位置がHTMLタグ内かどうか判定"""
+                  before_content = content[:position]
+                  return '<' in before_content.split('\n')[-1] and '>' not in before_content.split('\n')[-1]
+              
+              def check_file(self, filepath):
+                  """単一ファイルのチェック"""
+                  try:
+                      with open(filepath, 'r', encoding='utf-8') as f:
+                          content = f.read()
+                      
+                      self.check_line_breaks(content, filepath)
+                      self.check_markdown_conversion(content, filepath)
+                      self.check_html_markdown_conflicts(content, filepath)
+                      self.check_hardline_breaks(content, filepath)
+                      
+                  except Exception as e:
+                      self.errors.append({
+                          'type': 'file_error',
+                          'file': filepath,
+                          'line': 0,
+                          'message': f'ファイル処理エラー: {str(e)}',
+                          'severity': 'error'
+                      })
+              
+              def check_build_output(self):
+                  """MkDocsビルド後のHTMLチェック"""
+                  site_dir = Path('site')
+                  if not site_dir.exists():
+                      return
+                  
+                  for html_file in site_dir.rglob('*.html'):
+                      try:
+                          with open(html_file, 'r', encoding='utf-8') as f:
+                              html_content = f.read()
+                          
+                          soup = BeautifulSoup(html_content, 'html.parser')
+                          
+                          # 空のリスト項目チェック
+                          for li in soup.find_all('li'):
+                              if not li.get_text(strip=True):
+                                  self.errors.append({
+                                      'type': 'empty_list_item',
+                                      'file': str(html_file),
+                                      'line': 0,
+                                      'message': '空のリスト項目があります',
+                                      'severity': 'warning'
+                                  })
+                          
+                          # 変換されていないMarkdown記法をチェック
+                          text_content = soup.get_text()
+                          if re.search(r'(?<!\*)\*[^*]+\*(?!\*)', text_content):
+                              self.warnings.append({
+                                  'type': 'unconverted_markdown',
+                                  'file': str(html_file),
+                                  'line': 0,
+                                  'message': '変換されていないMarkdown記法があります',
+                                  'severity': 'warning'
+                              })
+                              
+                      except Exception as e:
+                          self.errors.append({
+                              'type': 'html_parse_error',
+                              'file': str(html_file),
+                              'line': 0,
+                              'message': f'HTML解析エラー: {str(e)}',
+                              'severity': 'error'
+                          })
+              
+              def run_checks(self):
+                  """全チェックを実行"""
+                  docs_dir = Path('docs')
+                  if not docs_dir.exists():
+                      print("docsディレクトリが見つかりません")
+                      return False
+                  
+                  # Markdownファイルをチェック
+                  for md_file in docs_dir.rglob('*.md'):
+                      self.check_file(str(md_file))
+                  
+                  # MkDocsをビルド
+                  try:
+                      subprocess.run(['mkdocs', 'build'], check=True, capture_output=True)
+                      self.check_build_output()
+                  except subprocess.CalledProcessError as e:
+                      self.errors.append({
+                          'type': 'build_error',
+                          'file': 'mkdocs.yml',
+                          'line': 0,
+                          'message': f'MkDocsビルドエラー: {e.stderr.decode()}',
+                          'severity': 'error'
+                      })
+                  
+                  return len([e for e in self.errors if e['severity'] == 'error']) == 0
+              
+              def generate_report(self):
+                  """レポート生成"""
+                  error_count = len([e for e in self.errors if e['severity'] == 'error'])
+                  warning_count = len([e for e in self.errors + self.warnings if e['severity'] == 'warning'])
+                  info_count = len([e for e in self.errors + self.warnings if e['severity'] == 'info'])
+                  
+                  print(f"\n📊 品質チェック結果")
+                  print(f"エラー: {error_count}")
+                  print(f"警告: {warning_count}")
+                  print(f"情報: {info_count}")
+                  
+                  all_issues = self.errors + self.warnings
+                  all_issues.sort(key=lambda x: (x['file'], x['line']))
+                  
+                  for issue in all_issues:
+                      severity_icon = {'error': '❌', 'warning': '⚠️', 'info': 'ℹ️'}[issue['severity']]
+                      print(f"\n{severity_icon} {issue['file']}:{issue['line']}")
+                      print(f"   {issue['message']}")
+                      print(f"   種類: {issue['type']}")
+                  
+                  # GitHub Actions用のアノテーション
+                  if os.getenv('GITHUB_ACTIONS'):
+                      for issue in all_issues:
+                          level = 'error' if issue['severity'] == 'error' else 'warning'
+                          print(f"::{level} file={issue['file']},line={issue['line']}::{issue['message']}")
+                  
+                  return error_count == 0
+          
+          if __name__ == '__main__':
+              checker = QualityChecker()
+              success = checker.run_checks()
+              success = checker.generate_report() and success
+              
+              if not success:
+                  print("\n❌ 品質チェックで問題が見つかりました")
+                  sys.exit(1)
+              else:
+                  print("\n✅ 品質チェックが正常に完了しました")
+                  sys.exit(0)
+          EOF
+
+      - name: Run quality checks
+        id: quality-check
+        run: |
+          python quality_check.py
+          echo "quality_check_result=$?" >> $GITHUB_OUTPUT
+
+      - name: Comment PR
+        if: github.event_name == 'pull_request' && steps.quality-check.outputs.quality_check_result != '0'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            
+            // 品質チェック結果を読み込み（簡略化）
+            const comment = `## 📝 文書品質チェック結果
+            
+            文書の品質チェックで問題が検出されました。詳細は上記のワークフロー実行ログを確認してください。
+            
+            よくある問題:
+            - **改行ずれ**: 連続する空行、行末スペース
+            - **Markdown変換エラー**: \`*強調*\`が正しく変換されない
+            - **HTMLタグ内のMarkdown崩れ**: HTMLタグ内でMarkdown記法を使用
+            - **リスト記法の問題**: \`-\`や\`*\`が変換されない
+            - **改行の問題**: 長すぎる行、不適切な改行位置
+            
+            修正後、再度プッシュしてください。`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+      - name: Upload quality report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: quality-check-report
+          path: |
+            quality_check.py
+            site/
+          retention-days: 7

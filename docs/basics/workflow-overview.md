@@ -335,18 +335,18 @@
 
 **推奨次の学習**:
 
-1. **ファイル形式の理解**  
+1. **ファイル形式の理解**
    [ファイル形式の理解 →](file-formats.md){ .md-button .md-button--primary }
 
-2. **専門用語の習得**  
+2. **専門用語の習得**
    [専門用語集 →](terminology.md){ .md-button }
 
-3. **実践的な制作開始**  
+3. **実践的な制作開始**
    [既存衣装のフィッティング →](../workflows/garment-fitting.md){ .md-button }
 
 または、具体的な衣装制作から始める場合：
 
-4. **初心者向け実践**  
+4. **初心者向け実践**
    [Tシャツ制作ガイド →](../garments/t-shirt.md){ .md-button }
 
 !!! success "制作工程全体像の理解完了！"

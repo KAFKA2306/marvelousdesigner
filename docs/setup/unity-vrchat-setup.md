@@ -71,7 +71,7 @@
 
 **画面構成の確認**:
 - **Scene View** (3D作業画面)
-- **Game View** (実行時プレビュー)  
+- **Game View** (実行時プレビュー)
 - **Hierarchy** (オブジェクト一覧)
 - **Project** (アセット管理)
 - **Inspector** (プロパティ設定)
@@ -178,7 +178,7 @@
 ```
 Assets/
 ├── Avatars/           (アバターファイル)
-├── Materials/         (マテリアル)  
+├── Materials/         (マテリアル)
 ├── Textures/          (テクスチャ)
 ├── Garments/          (Marvelous Designerからの衣装)
 ├── Prefabs/           (プレファブ)
@@ -201,22 +201,22 @@ Assets/
 
 ??? question "「VCCでプロジェクトが作成できない」"
     **対処法**:
-    
+
     1. **権限の問題**:
        - VCCを管理者権限で実行
        - ウイルス対策ソフトの除外設定を確認
-    
+
     2. **パスの問題**:
        - 日本語が含まれないパスを使用
        - パスが長すぎないか確認
-    
+
     3. **ネットワークの問題**:
        - インターネット接続を確認
        - ファイアウォール設定を確認
 
 ??? question "「Unity Editorが認識されない」"
     **対処法**:
-    
+
     1. Unity Hubから正確なバージョン（2022.3.22f1）をインストール
     2. VCCの Settings → Unity Editors で手動追加
     3. 複数のUnityバージョンがインストールされている場合は整理
@@ -225,24 +225,24 @@ Assets/
 
 ??? question "「VRChat SDKメニューが表示されない」"
     **対処法**:
-    
+
     1. **Package Managerの確認**:
        - Window → Package Manager
        - In Project で VRChat SDK - Avatars が表示されているか確認
-    
+
     2. **再インポート**:
        - Assets → Reimport All
        - しばらく時間がかかりますが完了を待つ
-    
+
     3. **プロジェクトの再作成**:
        - VCCから新しいプロジェクトを作成し直す
 
 ??? question "「ビルドが失敗する」"
     **対処法**:
-    
+
     1. **コンソールエラーの確認**:
        - Window → General → Console でエラーメッセージを確認
-    
+
     2. **よくあるエラーと対処**:
        - Missing script: 破損したコンポーネントを削除
        - Path too long: より短いパスに移動

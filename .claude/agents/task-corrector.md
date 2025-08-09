@@ -163,7 +163,7 @@
 
 **CRITICAL ISSUE IDENTIFIED: 欠損ファイル参照**
 - **問題**: `physics/simulation-settings.md` が存在しないが、4個所から参照されている
-- **影響範囲**: 
+- **影響範囲**:
   - docs/physics/fabric-properties.md（1箇所）
   - docs/garments/casual-wear.md（1箇所）
   - docs/garments/skirt.md（1箇所）
@@ -177,7 +177,7 @@
 - **タスク**: 包括的リンク整合性検証
 - **優先度**: 1（最優先）
 - **対象**: 全23ファイルの内部・外部リンク検証
-- **主な校正領域**: 
+- **主な校正領域**:
   - 欠損ファイル参照の特定と修正
   - 相対パス検証
   - アンカーリンク確認
@@ -212,7 +212,7 @@
 主な校正領域: リンク確認・表示崩れ・技術用語統一
 
 特に以下の点を重点的にチェックしてください：
-1. **内部リンク検証**: 
+1. **内部リンク検証**:
    - `[トラブルシューティング](#marvelous-designer起動トラブル)` の正確性
    - `[Marvelous Designer初回起動ガイドに進む →](md-first-launch.md)` の相対パス
    - `[よくある問題と対処法](../workflows/common-issues.md)` の参照先確認

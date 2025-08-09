@@ -93,7 +93,7 @@
         """
         properties = FabricDatabase.get_properties(fabric_type)
         environmental_factors = analyze_environment(environment)
-        
+
         return optimize_parameters(properties, environmental_factors)
     ```
 
@@ -153,7 +153,7 @@
                 'visual_quality_score',
                 'compatibility_test'
             ]
-        
+
         def run_full_check(self, garment_path):
             results = {}
             for check in self.check_items:
@@ -292,7 +292,7 @@
     - 文化的注意点: 多様性・包括性への配慮
 
     欧州市場:
-    - 特徴: デザイン性・芸術性重視  
+    - 特徴: デザイン性・芸術性重視
     - プラットフォーム: 各国のローカルサイト
     - 法的注意点: GDPR等のデータ保護規制
 
@@ -435,15 +435,15 @@
         def __init__(self):
             self.data_sources = [
                 'booth_sales_data',
-                'vrchat_user_analytics', 
+                'vrchat_user_analytics',
                 'social_media_trends',
                 'competitor_analysis'
             ]
-        
+
         def analyze_trends(self):
             # トレンド分析・予測
             pass
-            
+
         def customer_segmentation(self):
             # 顧客セグメンテーション
             pass
@@ -452,7 +452,7 @@
     **KPI・指標管理**:
     - 売上・収益性指標
     - 顧客満足度・NPS
-    - 技術品質・パフォーマンス指標  
+    - 技術品質・パフォーマンス指標
     - ブランド認知度・市場シェア
 
 ### 予測・最適化
@@ -535,5 +535,5 @@
 
 ---
 
-*最終更新: 2025-08-08*  
+*最終更新: 2025-08-08*
 *高度技術情報は急速に変化します。常に最新情報の確認と継続的な学習を心がけてください。*

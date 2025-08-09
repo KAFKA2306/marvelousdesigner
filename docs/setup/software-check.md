@@ -103,7 +103,7 @@
 ```
 VRChat衣装制作/
 ├── Avatars/          (FBXファイル保存用)
-├── Garments/         (PZIPファイル保存用)  
+├── Garments/         (PZIPファイル保存用)
 ├── UnityProjects/    (Unityプロジェクト用)
 ├── Exports/          (完成品保存用)
 └── References/       (参考画像・資料用)
@@ -134,17 +134,17 @@ VRChat衣装制作/
 
 ??? question "「Marvelous Designerが起動しない」"
     **考えられる原因と対処法**:
-    
+
     1. **ライセンスの問題**
        - ライセンスが有効か確認
        - インターネット接続を確認
        - 体験版の期限をチェック
-    
+
     2. **システム要件不足**
        - Windows 10/11（64bit）が必要
        - メモリ8GB以上推奨（16GB以上が理想的）
        - DirectX 11対応グラフィックカードが必須
-    
+
     3. **インストールの問題**
        - 管理者権限で実行してみる
        - アンチウイルスソフトの除外設定を確認
@@ -152,7 +152,7 @@ VRChat衣装制作/
 
 ??? question "「画面が真っ白になる」"
     **対処法**:
-    
+
     1. グラフィックドライバの更新
     2. 設定ファイルのリセット
     3. 互換性モードでの起動
@@ -161,14 +161,14 @@ VRChat衣装制作/
 
 ??? question "「Unity 2022.3.22f1が見つからない」"
     **対処法**:
-    
+
     1. Unity Hub経由で正確なバージョンをインストール
     2. [Unity Archive](https://unity.com/releases/editor/archive)から直接ダウンロード
     3. インストール時は必ず「Visual Studio Community」も一緒にインストール
 
 ??? question "「VCCでUnityが認識されない」"
     **対処法**:
-    
+
     1. VCCを再起動
     2. Unity Hubを管理者権限で実行
     3. Unity Editorを一度起動してからVCCを確認

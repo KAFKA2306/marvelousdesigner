@@ -11,7 +11,7 @@ This is a **Japanese-language VRChat garment creation guide** built with MkDocs.
 
 ## Tech Stack
 - **Documentation System**: MkDocs with Material theme
-- **Primary Software Covered**: 
+- **Primary Software Covered**:
   - Marvelous Designer 2025 (latest version)
   - Unity 2022.3.22f1 LTS (VRChat recommended)
   - VRChat SDK3 v3.8.2+

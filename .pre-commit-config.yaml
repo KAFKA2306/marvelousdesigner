@@ -1,0 +1,61 @@
+# Pre-commit hooks for MkDocs documentation quality (Simplified)
+# Install: pip install pre-commit && pre-commit install
+# Run manually: pre-commit run --all-files
+
+repos:
+  # 基本的なファイル品質チェック
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        name: 行末空白の削除
+        description: "Markdownファイルの行末空白を削除"
+        types: [markdown]
+        
+      - id: end-of-file-fixer  
+        name: ファイル末尾改行の修正
+        description: "ファイル末尾に改行を追加"
+        types: [markdown]
+        
+      - id: check-yaml
+        name: YAML構文チェック
+        description: "mkdocs.ymlなどのYAML構文をチェック"
+        files: \.(ya?ml)$
+        
+      - id: check-json
+        name: JSON構文チェック
+        description: "JSONファイルの構文をチェック"
+        files: \.json$
+        
+      - id: mixed-line-ending
+        name: 改行コードの統一
+        description: "改行コードをLFに統一"
+        args: [--fix=lf]
+
+  # 独自の文書品質チェック（Python依存のみ）
+  - repo: local
+    hooks:
+      - id: doc-quality-check
+        name: 文書品質チェック
+        description: "改行ずれ・Markdown変換エラーなどを検出（docs/のみ）"
+        entry: /usr/bin/python3 scripts/pre_commit_wrapper.py quality_check
+        language: system
+        files: ^docs/.*\.md$
+        require_serial: true
+        
+      - id: japanese-text-check
+        name: 日本語テキストチェック
+        description: "日本語文書の特殊な問題をチェック（docs/のみ）"
+        entry: /usr/bin/python3 scripts/pre_commit_wrapper.py japanese_text_check
+        language: system
+        files: ^docs/.*\.md$
+        require_serial: true
+        
+      - id: link-check
+        name: 内部リンクチェック
+        description: "Markdownファイル間のリンクをチェック（pre-commit時は軽量）"
+        entry: /usr/bin/python3 scripts/link_check.py --pre-commit
+        language: system
+        files: ^docs/.*\.md$
+        pass_filenames: false
+        require_serial: true

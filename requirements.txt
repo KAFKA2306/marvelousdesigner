@@ -1,0 +1,23 @@
+# Development and Quality Assurance Dependencies
+
+# MkDocs and plugins
+mkdocs>=1.5.0
+mkdocs-material>=9.0.0
+mkdocs-git-revision-date-localized-plugin>=1.2.0
+mkdocs-minify-plugin>=0.7.0
+
+# Quality check script dependencies
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+html5lib>=1.1
+markdown>=3.4.0
+pymdown-extensions>=10.0.0
+
+# Pre-commit hooks
+pre-commit>=3.3.0
+
+# Linting and formatting
+markdownlint-cli>=0.39.0
+
+# Additional Python packages for text processing
+regex>=2023.6.0

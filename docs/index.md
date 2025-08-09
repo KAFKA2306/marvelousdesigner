@@ -45,34 +45,34 @@
 === "初心者向け（推奨）"
 
     **段階1: 基礎準備（1日目）**
-    
+
     1. [ソフトウェア確認](setup/software-check.md) <span class="time-estimate">15分</span>
     2. [Marvelous Designer初回起動](setup/md-first-launch.md) <span class="time-estimate">30分</span>
     3. [基本インターフェース理解](basics/md-interface.md) <span class="time-estimate">45分</span>
 
     **段階2: 初回成功体験（2日目）**
-    
+
     4. [アバターの読み込み](workflows/avatar-import.md) <span class="time-estimate">30分</span>
     5. [既存衣装のフィッティング](workflows/garment-fitting.md) <span class="time-estimate">2時間</span>
-    
+
     **段階3: オリジナル制作（3-4日目）**
-    
+
     6. [Tシャツ作成](garments/t-shirt.md) <span class="difficulty-beginner">初心者</span> <span class="time-estimate">4-6時間</span>
     7. [物理設定の基本](physics/fabric-properties.md) <span class="time-estimate">1時間</span>
 
     **段階4: VRChat展開（5日目）**
-    
+
     8. [Unity統合](unity/project-setup.md) <span class="time-estimate">1時間</span>
     9. [VRChatアップロード](unity/avatar-upload.md) <span class="time-estimate">1時間</span>
 
 === "急いでいる方向け"
 
     **最短ルート（1-2日）**
-    
+
     1. [ソフトウェア確認](setup/software-check.md) ✅
     2. [既存衣装フィッティング](workflows/garment-fitting.md) ✅
     3. [Unity統合＋アップロード](unity/project-setup.md) ✅
-    
+
     *まずは既存の服を使って一度完成させてから、オリジナル制作に挑戦しましょう*
 
 ## よくある不安と回答
@@ -81,10 +81,10 @@
     **もちろんできます！** このガイドは完全初心者の方々と一緒に作り上げました。一つずつ確実に進めば、必ず完成させることができます。
 
 ??? question "「どのくらい時間がかかる？」"
-    **最初の衣装（フィッティング）**: 2-3時間  
-    **オリジナルTシャツ**: 4-6時間  
-    **複雑なドレス**: 8-12時間  
-    
+    **最初の衣装（フィッティング）**: 2-3時間
+    **オリジナルTシャツ**: 4-6時間
+    **複雑なドレス**: 8-12時間
+
     慣れてくると、同じ作業が半分の時間でできるようになります。
 
 ??? question "「失敗したら怖い...」"
