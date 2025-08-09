@@ -12,13 +12,13 @@
         <meta name="author" content="VRChat Garment Creation Team">
       
       
-        <link rel="canonical" href="https://username.github.io/vrchat-garment-guide/setup/unity-vrchat-setup/">
+        <link rel="canonical" href="https://username.github.io/vrchat-garment-guide/workflows/modular-garments/">
       
       
-        <link rel="prev" href="../md-first-launch/">
+        <link rel="prev" href="../garment-fitting/">
       
       
-        <link rel="next" href="../../basics/md-interface/">
+        <link rel="next" href="../avatar-modification/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Unity・VRChat SDK設定 - VRChat衣装制作完全ガイド</title>
+        <title>モジュラー衣装システム - VRChat衣装制作完全ガイド</title>
       
     
     
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unityvrchat-sdk" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -130,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Unity・VRChat SDK設定
+              モジュラー衣装システム
             
           </span>
         </div>
@@ -260,13 +260,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../software-check/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../setup/software-check/" class="md-tabs__link">
           
   
   
@@ -302,11 +300,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../workflows/avatar-import/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../avatar-import/" class="md-tabs__link">
           
   
   
@@ -471,31 +471,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -508,7 +505,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             環境設定
@@ -522,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software-check/" class="md-nav__link">
+      <a href="../../setup/software-check/" class="md-nav__link">
         
   
   
@@ -545,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../md-first-launch/" class="md-nav__link">
+      <a href="../../setup/md-first-launch/" class="md-nav__link">
         
   
   
@@ -565,32 +562,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Unity・VRChat SDK設定
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../setup/unity-vrchat-setup/" class="md-nav__link">
         
   
   
@@ -601,181 +576,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="このページの内容">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      このページの内容
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 今回達成する目標
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 設定手順
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🚀 設定手順">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-vrchat-creator-companion-vcc" class="md-nav__link">
-    <span class="md-ellipsis">
-      ステップ 1: VRChat Creator Companion (VCC) セットアップ
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-unity-editor" class="md-nav__link">
-    <span class="md-ellipsis">
-      ステップ 2: Unity Editorの確認と設定
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-vrchat-sdk3" class="md-nav__link">
-    <span class="md-ellipsis">
-      ステップ 3: VRChat SDK3の詳細設定
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      ステップ 4: テスト用アバターでの動作確認
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      ステップ 5: プロジェクト構造の理解
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 トラブルシューティング
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔧 トラブルシューティング">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vcc" class="md-nav__link">
-    <span class="md-ellipsis">
-      VCC関連トラブル
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unity" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unity関連トラブル
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ 完了チェックリスト
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌟 次のステップ
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      📚 参考情報
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📚 参考情報">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vrchat" class="md-nav__link">
-    <span class="md-ellipsis">
-      VRChat開発に役立つリソース
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      コミュニティ
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -982,28 +782,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1016,7 +819,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             作業手順
@@ -1030,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflows/avatar-import/" class="md-nav__link">
+      <a href="../avatar-import/" class="md-nav__link">
         
   
   
@@ -1053,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflows/garment-fitting/" class="md-nav__link">
+      <a href="../garment-fitting/" class="md-nav__link">
         
   
   
@@ -1073,10 +876,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../workflows/modular-garments/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    モジュラー衣装システム
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1087,6 +912,271 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="このページの内容">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      このページの内容
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      概要
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      モジュラー システムの基本概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="モジュラー システムの基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-modular-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. モジュラー ライブラリ（Modular Library）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-block-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. ブロック セット（Block Sets）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本ワークフロー
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本ワークフロー">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ステップ1: モジュラー モードの開始
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ステップ2: パターンの配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      ステップ3: 縫製とシミュレーション
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ステップ4: ブロック ファイルの保存
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vrchat" class="md-nav__link">
+    <span class="md-ellipsis">
+      VRChat向け最適化のポイント
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VRChat向け最適化のポイント">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      アバター ポーズの推奨設定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#everywear" class="md-nav__link">
+    <span class="md-ellipsis">
+      EveryWearとの連携
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      実践的な応用例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="実践的な応用例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      学校制服セットの作成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      カジュアル衣装セット
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      よくある問題と解決方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="よくある問題と解決方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: ブロック同士の縫製がうまくいかない
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: シミュレーション結果が不自然
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: エクスポート時のポリゴン数が多すぎる
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      学習リソース
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="学習リソース">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      公式チュートリアル
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      コミュニティ リソース
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      次のステップ
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1099,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflows/avatar-modification/" class="md-nav__link">
+      <a href="../avatar-modification/" class="md-nav__link">
         
   
   
@@ -1122,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflows/new-garment-creation/" class="md-nav__link">
+      <a href="../new-garment-creation/" class="md-nav__link">
         
   
   
@@ -1145,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflows/common-issues/" class="md-nav__link">
+      <a href="../common-issues/" class="md-nav__link">
         
   
   
@@ -1832,306 +1922,116 @@
   
 
 
-<h1 id="unityvrchat-sdk">Unity・VRChat SDK設定ガイド<a class="headerlink" href="#unityvrchat-sdk" title="Permanent link">&para;</a></h1>
-<p><span class="time-estimate">所要時間: 約45分</span> <span class="difficulty-beginner">初心者向け</span></p>
-<p><strong>このページの目的</strong>: UnityとVRChat SDK3を正しく設定し、アバター制作・アップロードの準備を完了します。</p>
-<div class="admonition info">
-<p class="admonition-title">事前準備</p>
+<h1 id="_1">モジュラー衣装システム<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">概要<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Marvelous Designer 2025で新しく導入された<strong>モジュラー ライブラリ</strong>機能を活用することで、効率的に衣装のバリエーションを作成できるようになりました。従来の一から作り直すワークフローから、<strong>ブロック セット</strong>を組み合わせるモジュラー式の制作方法へと進化しています。</p>
+<div class="admonition tip">
+<p class="admonition-title">学習時間の目安</p>
 <ul>
-<li><a href="../software-check/">ソフトウェア確認ガイド</a>が完了していること</li>
-<li>Unity Hub、Unity 2022.3.22f1、VRChat Creator Companionがインストール済みであること</li>
-<li>VRChatアカウントを持っていること</li>
+<li><strong>基礎理解</strong>: 30分</li>
+<li><strong>実践ワークフロー</strong>: 1-2時間  </li>
+<li><strong>応用技術</strong>: 3-4時間</li>
 </ul>
 </div>
-<h2 id="_1">🎯 今回達成する目標<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>✅ VRChat Creator Companionを正しく設定する</li>
-<li>✅ Unity 2022.3.22f1でVRChatプロジェクトを作成する</li>
-<li>✅ VRChat SDK3をインストールする</li>
-<li>✅ アバター開発環境を準備する</li>
-<li>✅ テスト用のシンプルなアバターをアップロードする</li>
-</ol>
-<h2 id="_2">🚀 設定手順<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="1-vrchat-creator-companion-vcc">ステップ 1: VRChat Creator Companion (VCC) セットアップ<a class="headerlink" href="#1-vrchat-creator-companion-vcc" title="Permanent link">&para;</a></h3>
-<div class="step-container">
-<div class="step-number">VCCの初期設定</div>
-
-**VCCを起動して初期設定を行います**:
-
-1. **VRChat Creator Companion**を起動
-2. 初回起動時に表示される案内に従って進む
-3. VRChatアカウントでログインする
-
-**Unity Editorの設定**:
-1. **「Settings」** タブをクリック
-2. **「Unity Editors」** セクションを確認
-3. **Unity 2022.3.22f1** が表示されていることを確認
-
-!!! tip "Unity Editorが認識されない場合"
-    1. **「Add Unity Install」** をクリック
-    2. Unity 2022.3.22f1のインストール場所を手動で指定
-    3. 通常は `C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe`
-</div>
-
-<div class="step-container">
-<div class="step-number">新規VRChatプロジェクトの作成</div>
-
-**アバター制作用プロジェクトを作成します**:
-
-1. VCCのメイン画面で **「Create New Project」** をクリック
-2. **「Avatar」** プロジェクトタイプを選択
-3. プロジェクト情報を入力:
-   - **Project Name**: `VRChat衣装制作プロジェクト`
-   - **Location**: 作成した「VRChat衣装制作/UnityProjects/」フォルダ内
-4. **「Create Project」** をクリック
-
-**自動的に行われる処理**:
-- Unity Editorが起動します
-- VRChat SDK3が自動的にインストールされます
-- 必要なパッケージが設定されます
-
-!!! success "プロジェクト作成完了"
-    Unity Editorが起動し、VRChatのロゴが表示されたらプロジェクト作成完了です。
-</div>
-
-<h3 id="2-unity-editor">ステップ 2: Unity Editorの確認と設定<a class="headerlink" href="#2-unity-editor" title="Permanent link">&para;</a></h3>
-<div class="step-container">
-<div class="step-number">Unity Editorの初期確認</div>
-
-**Unity Editorが正常に動作しているか確認します**:
-
-**画面構成の確認**:
-- **Scene View** (3D作業画面)
-- **Game View** (実行時プレビュー)  
-- **Hierarchy** (オブジェクト一覧)
-- **Project** (アセット管理)
-- **Inspector** (プロパティ設定)
-
-**VRChat SDK3の確認**:
-1. 上部メニューバーに **「VRChat SDK」** メニューが表示されているか確認
-2. **「VRChat SDK」** → **「Show Control Panel」** をクリック
-3. VRChat SDK Control Panelが開くことを確認
-
-!!! warning "VRChat SDKメニューが表示されない場合"
-    1. **「Window」** → **「Package Manager」** を開く
-    2. **「In Project」** を選択して「VRChat SDK - Avatars」が表示されているか確認
-    3. 表示されていない場合は、VCCから再度プロジェクトを作成
-</div>
-
-<div class="step-container">
-<div class="step-number">Unity Editorの基本設定</div>
-
-**開発しやすい環境に調整します**:
-
-**Layout設定**:
-1. 右上の **「Layout」** ドロップダウンから **「2 by 3」** を選択
-2. または自分の好みに合わせて調整
-
-**Auto Saveの有効化**:
-1. **「Edit」** → **「Preferences」** → **「General」**
-2. **「Auto Refresh」** を有効にする
-
-**日本語化（オプション）**:
-- Unity 2022では日本語化パッケージが利用可能
-- **「Window」** → **「Package Manager」** → **「Unity Registry」** → **「Localization Package」**
-</div>
-
-<h3 id="3-vrchat-sdk3">ステップ 3: VRChat SDK3の詳細設定<a class="headerlink" href="#3-vrchat-sdk3" title="Permanent link">&para;</a></h3>
-<div class="step-container">
-<div class="step-number">VRChat Control Panelの設定</div>
-
-**VRChat SDK Control Panelを開いて設定します**:
-
-1. **「VRChat SDK」** → **「Show Control Panel」**
-2. **「Authentication」** タブでVRChatアカウントにログイン
-
-**アバター設定の確認**:
-1. **「Builder」** タブを選択
-2. **「Build & Publish for Windows」** セクションが表示されることを確認
-
-**設定項目**:
-- **Publish to VRChat**: VRChatにアップロードする場合に使用
-- **Build Only**: テスト用ビルドのみ
-- **Test Avatar**: ローカルテスト用
-
-!!! info "Trust Rank について"
-    VRChatにアバターをアップロードするには「New User」以上のTrust Rankが必要です。
-</div>
-
-<h3 id="4">ステップ 4: テスト用アバターでの動作確認<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<div class="step-container">
-<div class="step-number">シンプルなテストアバターの作成</div>
-
-**基本的なアバターでVRChat統合をテストします**:
-
-**デフォルトアバターの使用**:
-1. ProjectウィンドウでVRChat SDK samplesを確認
-2. **「VRChat SDK」** → **「Samples」** → **「Avatar Dynamics Robot Avatar」**
-3. シーンにロボットアバターをドラッグ&ドロップ
-
-**VRChat Avatar Descriptorの確認**:
-1. Hierarchyでアバターを選択
-2. InspectorでVRChat Avatar Descriptorコンポーネントを確認
-3. **View Position**（視点位置）が設定されていることを確認
-
-!!! tip "カスタムアバターを使用したい場合"
-    お持ちのFBXファイルも同様にドラッグ&ドロップで追加できますが、最初はテスト用アバターで動作確認することをお勧めします。
-</div>
-
-<div class="step-container">
-<div class="step-number">Build & Testでローカルテスト</div>
-
-**作成したアバターをローカルでテストします**:
-
-1. VRChat SDK Control Panelの **「Builder」** タブを開く
-2. **「Build & Test」** をクリック
-3. ビルド処理が開始されます
-
-**ビルド完了後**:
-1. VRChatが自動的に起動します（インストールされている場合）
-2. ローカルテスト用のワールドが開きます
-3. 作成したアバターが使用可能になります
-
-!!! success "テスト成功！"
-    VRChatでアバターを確認できれば、基本的な統合環境の構築完了です。
-</div>
-
-<h3 id="5">ステップ 5: プロジェクト構造の理解<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
-<div class="step-container">
-<div class="step-number">フォルダ構造の整理</div>
-
-**効率的な作業のために、プロジェクト構造を理解しましょう**:
-
-**推奨フォルダ構造**:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Assets/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Avatars/           (アバターファイル)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── Materials/         (マテリアル)  
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── Textures/          (テクスチャ)
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── Garments/          (Marvelous Designerからの衣装)
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── Prefabs/           (プレファブ)
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>└── Scenes/            (シーン)
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    └── AvatarSetup.unity
-</code></pre></div>
-
-**フォルダを作成する方法**:
-1. Projectウィンドウで右クリック
-2. **「Create」** → **「Folder」**
-3. 上記の名前でフォルダを作成
-
-!!! tip "プロジェクト管理のコツ"
-    ファイルが増えてくると管理が大変になります。最初からフォルダ分けを心がけましょう。
-</div>
-
-<h2 id="_3">🔧 トラブルシューティング<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="vcc">VCC関連トラブル<a class="headerlink" href="#vcc" title="Permanent link">&para;</a></h3>
-<details class="question">
-<summary>「VCCでプロジェクトが作成できない」</summary>
-<p><strong>対処法</strong>:</p>
-<ol>
-<li><strong>権限の問題</strong>:</li>
-<li>VCCを管理者権限で実行</li>
-<li>
-<p>ウイルス対策ソフトの除外設定を確認</p>
-</li>
-<li>
-<p><strong>パスの問題</strong>:</p>
-</li>
-<li>日本語が含まれないパスを使用</li>
-<li>
-<p>パスが長すぎないか確認</p>
-</li>
-<li>
-<p><strong>ネットワークの問題</strong>:</p>
-</li>
-<li>インターネット接続を確認</li>
-<li>ファイアウォール設定を確認</li>
-</ol>
-</details>
-<details class="question">
-<summary>「Unity Editorが認識されない」</summary>
-<p><strong>対処法</strong>:</p>
-<ol>
-<li>Unity Hubから正確なバージョン（2022.3.22f1）をインストール</li>
-<li>VCCの Settings → Unity Editors で手動追加</li>
-<li>複数のUnityバージョンがインストールされている場合は整理</li>
-</ol>
-</details>
-<h3 id="unity">Unity関連トラブル<a class="headerlink" href="#unity" title="Permanent link">&para;</a></h3>
-<details class="question">
-<summary>「VRChat SDKメニューが表示されない」</summary>
-<p><strong>対処法</strong>:</p>
-<ol>
-<li><strong>Package Managerの確認</strong>:</li>
-<li>Window → Package Manager</li>
-<li>
-<p>In Project で VRChat SDK - Avatars が表示されているか確認</p>
-</li>
-<li>
-<p><strong>再インポート</strong>:</p>
-</li>
-<li>Assets → Reimport All</li>
-<li>
-<p>しばらく時間がかかりますが完了を待つ</p>
-</li>
-<li>
-<p><strong>プロジェクトの再作成</strong>:</p>
-</li>
-<li>VCCから新しいプロジェクトを作成し直す</li>
-</ol>
-</details>
-<details class="question">
-<summary>「ビルドが失敗する」</summary>
-<p><strong>対処法</strong>:</p>
-<ol>
-<li><strong>コンソールエラーの確認</strong>:</li>
-<li>
-<p>Window → General → Console でエラーメッセージを確認</p>
-</li>
-<li>
-<p><strong>よくあるエラーと対処</strong>:</p>
-</li>
-<li>Missing script: 破損したコンポーネントを削除</li>
-<li>Path too long: より短いパスに移動</li>
-<li>Shader error: 使用しているシェーダーを確認</li>
-</ol>
-</details>
-<h2 id="_4">✅ 完了チェックリスト<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>全て完了したら、Unity・VRChat統合環境の準備完了です:</p>
-<div class="progress-checklist">
-<h4>Unity・VRChat SDK設定完了</h4>
-
-- [ ] VRChat Creator Companionが正常に動作する
-- [ ] Unity 2022.3.22f1でVRChatプロジェクトを作成できた
-- [ ] VRChat SDK3が正しくインストールされている
-- [ ] VRChat SDK Control Panelが開ける
-- [ ] VRChatアカウントでログインできた
-- [ ] テスト用アバターでBuild & Testが成功した
-- [ ] プロジェクトフォルダ構造を理解した
-- [ ] VRChatでローカルテストができた
-</div>
-
-<h2 id="_5">🌟 次のステップ<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>Unity・VRChat統合環境の準備ができました！</p>
-<p>次は実際にMarvelous Designerで衣装制作を始めましょう:</p>
-<p><a class="md-button md-button--primary" href="../../basics/md-interface/">Marvelous Designer基本インターフェースを学ぶ →</a></p>
-<p>または、すぐに実践に移りたい場合は:</p>
-<p><a class="md-button" href="../../workflows/avatar-import/">アバター読み込みガイドに進む →</a></p>
-<h2 id="_6">📚 参考情報<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h3 id="vrchat">VRChat開発に役立つリソース<a class="headerlink" href="#vrchat" title="Permanent link">&para;</a></h3>
+<h2 id="_3">モジュラー システムの基本概念<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1-modular-library">1. モジュラー ライブラリ（Modular Library）<a class="headerlink" href="#1-modular-library" title="Permanent link">&para;</a></h3>
+<p><strong>保存済みのガーメント グループやブロック セットから新しいバリエーションを作成</strong>するシステムです。</p>
 <ul>
-<li><strong>VRChat Creator Docs</strong>: <a href="https://creators.vrchat.com/">https://creators.vrchat.com/</a></li>
-<li><strong>VRChat SDK Release Notes</strong>: <a href="https://creators.vrchat.com/releases/">https://creators.vrchat.com/releases/</a></li>
-<li><strong>Unity Learn</strong>: <a href="https://learn.unity.com/">https://learn.unity.com/</a></li>
+<li>衣装の各部位をモジュール化してライブラリに保存</li>
+<li>既存のパーツを組み合わせて新しいデザインを効率的に制作</li>
+<li>CLO-SETとの統合でアセット管理が簡単に</li>
 </ul>
-<h3 id="_7">コミュニティ<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>VRChat 日本語コミュニティ</strong>: <a href="../../resources/community/#discord">Discord招待リンク</a></li>
-<li><strong>Unity 日本語フォーラム</strong>: <a href="https://forum.unity.com/">Unity Forum Japan</a></li>
-</ul>
-<div class="admonition success">
-<p class="admonition-title">環境構築完了！</p>
-<p>お疲れ様でした！これでVRChat衣装制作に必要な全ての基本環境が整いました。次はいよいよ実際の衣装制作に入ります！</p>
+<h3 id="2-block-sets">2. ブロック セット（Block Sets）<a class="headerlink" href="#2-block-sets" title="Permanent link">&para;</a></h3>
+<p>衣装を構成する<strong>各部位をブロック化</strong>したモジュールシステムです。</p>
+<p><strong>主要なブロック要素：</strong>
+- <strong>身頃（ボディ）</strong>: 前身頃・後身頃
+- <strong>袖（スリーブ）</strong>: 長袖・半袖・ノースリーブ
+- <strong>スカート・パンツ</strong>: ロング・ショート・フレア
+- <strong>襟（カラー）</strong>: 丸襟・角襟・スタンドカラー</p>
+<h2 id="_4">基本ワークフロー<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1">ステップ1: モジュラー モードの開始<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>File</strong> → <strong>New</strong> → <strong>Modular Template</strong>を選択</li>
+<li>衣装カテゴリーとモジュラー テンプレート タイプを選択</li>
+<li>2Dウィンドウに選択したモジュラー テンプレートが表示される</li>
+</ol>
+<h3 id="2">ステップ2: パターンの配置<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>追加されたガーメント ファイルからパターンをクリック&amp;ドラッグ</li>
+<li>対応するブロック ボックスにパターンを配置</li>
+<li>パターンがブロック ボックスにリンクされ、ボックスがダークグレーに変化</li>
+</ol>
+<h3 id="3">ステップ3: 縫製とシミュレーション<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>ブロック ボックスはデフォルトで縫製済み</strong></li>
+<li>必要に応じて追加の縫製ラインを設定</li>
+<li>シミュレーションを実行して衣装の動作を確認</li>
+</ol>
+<h3 id="4">ステップ4: ブロック ファイルの保存<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>File</strong> → <strong>Save Block</strong>でブロック ファイルとして保存</li>
+<li>ライブラリに登録して再利用可能な状態にする</li>
+</ol>
+<h2 id="vrchat">VRChat向け最適化のポイント<a class="headerlink" href="#vrchat" title="Permanent link">&para;</a></h2>
+<h3 id="_5">アバター ポーズの推奨設定<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">重要な設定変更</p>
+<p>VRC対応モデルは通常T-ポーズで作られていますが、<strong>Marvelous Designerではa-ポーズでの作業を強く推奨</strong>します。</p>
 </div>
+<p><strong>A-ポーズの利点：</strong>
+- 自然なクロスシミュレーション
+- 肩まわりの布の詰まりを防止
+- 不自然なシワの発生を抑制</p>
+<h3 id="everywear">EveryWearとの連携<a class="headerlink" href="#everywear" title="Permanent link">&para;</a></h3>
+<p><strong>EveryWear</strong>は、ゲームエンジンやリアルタイム プラットフォーム向けのエクスポート ツールセットです。</p>
+<p><strong>主な機能：</strong>
+- VRChat SDK対応の最適化エクスポート
+- ポリゴン数の自動調整
+- UV マッピングの最適化
+- 物理演算パラメータの調整</p>
+<h2 id="_6">実践的な応用例<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">学校制服セットの作成<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>ベース ブロック</strong>: 標準的なブレザーとスカート</li>
+<li><strong>バリエーション</strong>: 袖なし、半袖、冬服仕様</li>
+<li><strong>カスタマイズ</strong>: 校章、リボン、ソックスの長さ</li>
+</ol>
+<h3 id="_8">カジュアル衣装セット<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>トップス ブロック</strong>: Tシャツ、長袖、タンクトップ</li>
+<li><strong>ボトムス ブロック</strong>: ジーンズ、ショーツ、スカート</li>
+<li><strong>アクセサリー</strong>: パーカー、カーディガン</li>
+</ol>
+<h2 id="_9">よくある問題と解決方法<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="q">Q: ブロック同士の縫製がうまくいかない<a class="headerlink" href="#q" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> ブロック ボックス間の縫製ラインを確認し、パターンのマージン設定を調整してください。</p>
+<h3 id="q_1">Q: シミュレーション結果が不自然<a class="headerlink" href="#q_1" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> 以下を確認してください：
+- アバターがA-ポーズになっているか
+- 布の物理プロパティ設定
+- クロス同士の干渉設定</p>
+<h3 id="q_2">Q: エクスポート時のポリゴン数が多すぎる<a class="headerlink" href="#q_2" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> EveryWearの最適化設定を活用し、VRChat推奨のポリゴン数範囲内に調整してください。</p>
+<h2 id="_10">学習リソース<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">公式チュートリアル<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Marvelous Designer 公式 日本語チュートリアル動画</strong>（VRChat &amp; EveryWear対応）</li>
+<li><strong>CLO-SET モジュラー ライブラリ ガイド</strong></li>
+</ul>
+<h3 id="_12">コミュニティ リソース<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>BOOTH</strong>: 『Marvelous Designer CG衣装制作講座』（328ページの詳細ガイド）</li>
+<li><strong>立花シキミ式VRChat用アバター改変ワークフロー</strong></li>
+</ul>
+<h2 id="_13">次のステップ<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>モジュラー衣装システムをマスターしたら、以下の発展的なトピックに進みましょう：</p>
+<ul>
+<li><a href="../../physics/fabric-properties/">物理プロパティの最適化</a></li>
+<li><a href="../../unity/project-setup/">Unityでの最終調整</a></li>
+<li><a href="../../unity/avatar-upload/">アバター アップロード</a></li>
+</ul>
+<hr />
+<p><em>このガイドは Marvelous Designer 2025.0 以降を対象としています。古いバージョンでは一部の機能が利用できない場合があります。</em></p>
 
 
 
@@ -2152,7 +2052,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月8日 22:12:04 JST">2025年8月8日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月9日 02:23:45 JST">2025年8月9日</span>
   </span>
 
     
