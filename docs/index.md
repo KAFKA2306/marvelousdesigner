@@ -9,14 +9,16 @@
 <div class="step-container">
 <div class="step-number">✨ あなたが作れるようになるもの</div>
 
-- **ドレス**: エレガントなフォーマルドレスから可愛いカジュアルワンピースまで
-- **Tシャツ**: シンプルなものから個性的なデザインまで
-- **スカート**: フレアスカート、プリーツスカート、ミニからロングまで
-- **カジュアル服**: 普段着からおしゃれ着まで幅広く
-- **ワンピース**: 一体型の美しいシルエット
-- **水着**: 体にフィットする特殊な衣装
+<ul>
+<li><strong>ドレス</strong>: エレガントなフォーマルドレスから可愛いカジュアルワンピースまで</li>
+<li><strong>Tシャツ</strong>: シンプルなものから個性的なデザインまで</li>
+<li><strong>スカート</strong>: フレアスカート、プリーツスカート、ミニからロングまで</li>
+<li><strong>カジュアル服</strong>: 普段着からおしゃれ着まで幅広く</li>
+<li><strong>ワンピース</strong>: 一体型の美しいシルエット</li>
+<li><strong>水着</strong>: 体にフィットする特殊な衣装</li>
+</ul>
 
-そして何より、**VRChat内で美しく動く衣装**を作ることができます！
+<p>そして何より、<strong>VRChat内で美しく動く衣装</strong>を作ることができます！</p>
 </div>
 
 ## このガイドの特徴
@@ -133,11 +135,11 @@
 <div class="step-container">
 <div class="step-number">🚀 最初の一歩</div>
 
-**準備はできましたか？** まずは[ソフトウェアの確認](setup/software-check.md)から始めて、あなたのVRChat衣装制作の旅をスタートしましょう！
+<p><strong>準備はできましたか？</strong> まずは<a href="setup/software-check/">ソフトウェアの確認</a>から始めて、あなたのVRChat衣装制作の旅をスタートしましょう！</p>
 
-**不安や疑問があっても大丈夫。** 一歩ずつ、一緒に進んでいきます。
+<p><strong>不安や疑問があっても大丈夫。</strong> 一歩ずつ、一緒に進んでいきます。</p>
 
-[ソフトウェア確認に進む →](setup/software-check.md){ .md-button .md-button--primary }
+<p><a href="setup/software-check/" class="md-button md-button--primary">ソフトウェア確認に進む →</a></p>
 </div>
 
 ---
