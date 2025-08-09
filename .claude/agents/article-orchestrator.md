@@ -1,6 +1,6 @@
 ---
 name: article-orchestrator
-description: Use this agent when you need to create comprehensive articles about Marvelous Designer for beginners while optimizing token usage through strategic delegation. Examples: <example>Context: User wants to create a new tutorial article about creating a basic dress in Marvelous Designer. user: 'I need to write a tutorial on creating a simple dress for VRChat avatars' assistant: 'I'll use the article-orchestrator agent to plan and coordinate the creation of this tutorial, breaking it down into efficient sections and delegating specialized writing tasks.' <commentary>The user needs a structured tutorial created efficiently, so use the article-orchestrator agent to plan the content strategy and coordinate with specialized writing agents.</commentary></example> <example>Context: User has identified that existing garment tutorials need updates based on feedback in tasks.md. user: 'The t-shirt tutorial needs to be revised based on user feedback about clarity issues' assistant: 'Let me use the article-orchestrator agent to analyze the feedback and coordinate targeted improvements to the tutorial.' <commentary>Since this involves strategic content revision with token efficiency in mind, use the article-orchestrator agent to plan the revision approach.</commentary></example>
+description: "Use this agent when you need to create comprehensive articles about Marvelous Designer for beginners while optimizing token usage through strategic delegation."
 
 model: sonnet
 color: pink

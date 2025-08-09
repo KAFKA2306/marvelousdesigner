@@ -1,6 +1,6 @@
 ---
 name: correction-manager
-description: Use this agent when you need to coordinate and manage multiple article correction tasks across a documentation project. Examples: <example>Context: User has multiple Japanese documentation files that need systematic correction for formatting issues, broken links, and typos. user: 'I have 20 articles that need correction for 表示崩れ and リンク切れ issues' assistant: 'I'll use the correction-manager agent to create a systematic correction plan and coordinate the work' <commentary>Since the user needs to manage multiple article corrections systematically, use the correction-manager agent to organize the correction workflow.</commentary></example> <example>Context: An article-corrector agent has finished correcting one article and reports completion. user: 'article-corrector finished correcting docs/setup/software-check.md' assistant: 'I'll use the correction-manager agent to update the task list and assign the next correction job' <commentary>Since an article correction task is complete and needs coordination for the next task, use the correction-manager agent to manage the workflow.</commentary></example>
+description: "Use this agent when you need to coordinate and manage multiple article correction tasks across a documentation project."
 model: sonnet
 color: purple
 ---

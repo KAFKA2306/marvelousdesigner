@@ -1,6 +1,6 @@
 ---
 name: task-manager
-description: Use this agent when you need to coordinate and manage the workflow of article creation tasks. This agent should be used proactively to: 1) Read and parse tasks from tasks.md, 2) Delegate appropriate tasks to the article-orchestrator agent, 3) Monitor completion status, and 4) Assign the next topic for writing once the current task is finished. Examples: <example>Context: User has a tasks.md file with multiple article topics that need to be written sequentially. user: 'I need to start working on my article backlog' assistant: 'I'll use the task-manager agent to read the tasks.md file and begin coordinating the article writing workflow' <commentary>The user wants to begin processing their article queue, so use the task-manager agent to orchestrate the workflow.</commentary></example> <example>Context: The article-orchestrator has just completed writing an article about VRChat garment creation. user: 'The article about t-shirt creation is now complete' assistant: 'I'll use the task-manager agent to mark this task as complete and assign the next topic from the queue' <commentary>Since an article task has been completed, use the task-manager agent to update the workflow and assign the next task.</commentary></example>
+description: "Use this agent when you need to coordinate and manage the workflow of article creation tasks."
 model: sonnet
 color: purple
 ---
