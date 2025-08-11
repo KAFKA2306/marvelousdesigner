@@ -394,7 +394,7 @@ Unity統合が完了しました！
 
 **次の重要なステップ**:
 
-[VRChatアップロードとテスト →](avatar-upload.md){ .md-button .md-button--primary }
+[FBXからVRChatまでの完全ワークフロー →](fbx-to-vrchat-complete-guide.md){ .md-button .md-button--primary }
 
 または、品質をさらに向上させたい場合：
 

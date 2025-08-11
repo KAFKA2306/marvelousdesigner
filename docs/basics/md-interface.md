@@ -1,6 +1,7 @@
 # Marvelous Designer 基本インターフェースガイド
 
-<span class="time-estimate">所要時間: 約60分</span> <span class="difficulty-beginner">初心者向け</span>
+!!! note "ガイド情報"
+    **所要時間**: 約60分 | **難易度**: 初心者向け | **重要度**: 基礎習得必須
 
 **このページの目的**: Marvelous Designerのインターフェースを完全に理解し、効率的に作業できるようになります。
 
@@ -23,10 +24,9 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 
 ### 🎨 1. 2Dパターンウィンドウ（左側）
 
-<div class="step-container">
-<div class="step-number">Pattern Window の役割</div>
+!!! example "Pattern Window の役割"
 
-**ここで行う作業**:
+    **ここで行う作業**:
 - 衣装の型紙（パターン）を作成・編集
 - 平面的な作業（線描画、形状編集）
 - 縫い線の設定
@@ -41,15 +41,13 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 **基本操作**:
 - **ズーム**: マウスホイール
 - **パン（移動）**: 中ボタンドラッグ
-- **全体表示**: **「Ctrl + A」** → **「F」**
-</div>
+    - **全体表示**: **「Ctrl + A」** → **「F」**
 
 ### 🎭 2. 3Dビューポート（右側上部）
 
-<div class="step-container">
-<div class="step-number">3D Garment Window の役割</div>
+!!! example "3D Garment Window の役割"
 
-**ここで確認できること**:
+    **ここで確認できること**:
 - アバター（人型モデル）
 - 3D化された衣装
 - 布の物理シミュレーション結果
@@ -67,16 +65,14 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 - **「3」** キー: テクスチャ表示
 - **「4」** キー: レンダリング表示
 
-!!! tip "視点操作のコツ"
-    右クリックしながらマウスを動かすと、アバターを中心に回転できます。慣れるまで少し練習してみましょう。
-</div>
+    !!! tip "視点操作のコツ"
+        右クリックしながらマウスを動かすと、アバターを中心に回転できます。慣れるまで少し練習してみましょう。
 
 ### 🎛️ 3. 3D Object Browser（右側下部）
 
-<div class="step-container">
-<div class="step-number">Object Browser の使い方</div>
+!!! example "Object Browser の使い方"
 
-**表示されるもの**:
+    **表示されるもの**:
 - **Avatar**: 読み込まれたアバター
 - **Garments**: 作成した衣装一覧
 - **Trims**: ボタンやファスナーなどの装飾
@@ -90,12 +86,9 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 - オブジェクトの階層管理
 - 表示・非表示の制御
 - 選択状態の管理
-</div>
 
 ### 🛠️ 4. ツールバー（上部）
-
-<div class="step-container">
-<div class="step-number">主要ツールの配置</div>
+!!! example "主要ツールの配置"
 
 **左側: ファイル操作**
 - **New** (新規): 新しいプロジェクト
@@ -118,12 +111,9 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
     - マウスでクリック
     - キーボードショートカット（各ツールにマウスを載せると表示）
     - 右クリックメニューからアクセス
-</div>
 
 ### ⚙️ 5. プロパティパネル（右端または下部）
-
-<div class="step-container">
-<div class="step-number">Property Editor の活用</div>
+!!! example "Property Editor の活用"
 
 **表示される設定内容**（選択したオブジェクトによって変化）:
 
@@ -144,14 +134,11 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 
 !!! warning "プロパティパネルの場所"
     バージョンやレイアウト設定により、右側または下部に表示されます。見つからない場合は **「Window」** メニューから **「Property Editor」** を選択してください。
-</div>
 
 ## 📋 メニューバー詳細解説
 
 ### File（ファイル）メニュー
-
-<div class="step-container">
-<div class="step-number">よく使うFileメニュー項目</div>
+!!! example "よく使うFileメニュー項目"
 
 **基本操作**:
 - **New Project**: 新規プロジェクト作成
@@ -168,12 +155,9 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 
 !!! tip "ファイル管理のコツ"
     作業の節目では必ず **「Ctrl + S」** で保存する習慣をつけましょう。
-</div>
 
 ### Edit（編集）メニュー
-
-<div class="step-container">
-<div class="step-number">編集機能の活用</div>
+!!! example "編集機能の活用"
 
 **基本編集**:
 - **Undo** (Ctrl+Z): 操作を元に戻す
@@ -186,12 +170,9 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 **選択機能**:
 - **Select All**: 全て選択
 - **Deselect All**: 選択解除
-</div>
 
 ### 2D Pattern（2Dパターン）メニュー
-
-<div class="step-container">
-<div class="step-number">パターン作成専用機能</div>
+!!! example "パターン作成専用機能"
 
 **形状作成**:
 - **Add Rectangle**: 四角形追加
@@ -208,12 +189,9 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 
 !!! info "パターン作成の基本流れ"
     形状作成 → 編集・調整 → 縫い線設定 → シミュレーション実行
-</div>
 
 ### 3D Garment（3D衣装）メニュー
-
-<div class="step-container">
-<div class="step-number">3D表示と制御</div>
+!!! example "3D表示と制御"
 
 **シミュレーション制御**:
 - **Simulate**: シミュレーション開始/停止
@@ -227,12 +205,9 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 **物理設定**:
 - **Simulation Properties**: シミュレーション詳細設定
 - **Physical Properties**: 物理特性設定
-</div>
 
 ### Avatar（アバター）メニュー
-
-<div class="step-container">
-<div class="step-number">アバター管理機能</div>
+!!! example "アバター管理機能"
 
 **アバター操作**:
 - **Load Avatar**: アバターファイル読み込み
@@ -245,12 +220,9 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 
 !!! tip "アバター読み込みについて"
     FBXファイルは **「Avatar」** → **「Load Avatar」** から読み込みます。後で詳しく説明します。
-</div>
 
 ## ⌨️ 重要なキーボードショートカット
-
-<div class="step-container">
-<div class="step-number">覚えておくべき基本ショートカット</div>
+!!! example "覚えておくべき基本ショートカット"
 
 **基本操作**:
 - **Ctrl + N**: 新規プロジェクト
@@ -275,14 +247,11 @@ Marvelous Designerのメイン画面は**5つの主要エリア**に分かれて
 
 !!! success "ショートカットのメリット"
     ショートカットを覚えると作業効率が大幅に向上します。最初は基本的なものから覚えていきましょう。
-</div>
 
 ## 🔄 BlenderやUnityとの操作統一設定
 
 ### Blenderとの操作統一
-
-<div class="step-container">
-<div class="step-number">Blenderライクな操作感にする設定</div>
+!!! example "Blenderライクな操作感にする設定"
 
 **Blenderの業界互換キーマップ設定**:
 
@@ -300,12 +269,9 @@ BlenderでMarvelous Designerに近い操作感を得るには:
 
 !!! tip "効率的なワークフロー"
     Marvelous DesignerからBlenderに移る際は、OBJエクスポート時に「単一オブジェクト」「結合しない頂点」「薄い厚み」「統合UV座標ON」の設定を使用し、Blenderでスケールをdefaultキューブ（2m³）基準で調整します。
-</div>
 
 ### Unityとの連携設定
-
-<div class="step-container">
-<div class="step-number">Unity向けの最適化設定</div>
+!!! example "Unity向けの最適化設定"
 
 **共通操作要素**:
 - **中ボタンドラッグ**: 3Dビューの移動（両ソフト共通）
@@ -323,12 +289,9 @@ BlenderでMarvelous Designerに近い操作感を得るには:
 - エクスポート時の単位統一（メートル基準）
 - マテリアル設定の互換性確保
 - 物理プロパティの適切な変換
-</div>
 
 ### 専用キーパッド活用
-
-<div class="step-container">
-<div class="step-number">効率化のための外部デバイス設定</div>
+!!! example "効率化のための外部デバイス設定"
 
 **推奨キーパッド設定**:
 専門ユーザーの間では、**Razer Tartarus V2**などのキーパッドを活用し、Marvelous Designer特有の操作を効率化する事例があります。
@@ -340,14 +303,11 @@ BlenderでMarvelous Designerに近い操作感を得るには:
 
 !!! info "カスタマイズの利点"
     複数の3DCGソフトウェアを使う場合、共通の操作感を維持することで作業効率と学習効果が大幅に向上します。
-</div>
 
 ## 🎨 インターフェースカスタマイズ
 
 ### レイアウトの調整
-
-<div class="step-container">
-<div class="step-number">作業しやすい画面にする</div>
+!!! example "作業しやすい画面にする"
 
 **パネルサイズの調整**:
 1. パネル間の境界線にマウスを載せる
@@ -369,12 +329,9 @@ BlenderでMarvelous Designerに近い操作感を得るには:
     - **小さな画面**: 3Dビューポートを大きめに
     - **大きな画面**: 2Dと3Dを同じ比率で
     - **デュアルモニター**: セカンドモニターに3D表示
-</div>
 
 ### ツールバーのカスタマイズ
-
-<div class="step-container">
-<div class="step-number">効率的なツール配置</div>
+!!! example "効率的なツール配置"
 
 **よく使うツールの配置**:
 1. **「Window」** → **「Customize Toolbar」**
@@ -385,14 +342,11 @@ BlenderでMarvelous Designerに近い操作感を得るには:
 - シミュレーション制御ボタンを見やすい位置に
 - よく使うパターン作成ツールをまとめて配置
 - ファイル操作を左端にまとめる
-</div>
 
 ## 🔧 実践練習: インターフェース操作
 
 ### 練習1: 基本操作の確認
-
-<div class="step-container">
-<div class="step-number">画面操作の練習</div>
+!!! example "画面操作の練習"
 
 **3Dビューポートの練習**:
 1. 右ボタンドラッグでアバターを色々な角度から見る
@@ -407,12 +361,9 @@ BlenderでMarvelous Designerに近い操作感を得るには:
 
 !!! success "操作に慣れました"
     これらの基本操作は今後の作業で頻繁に使います。スムーズにできるようになるまで練習しましょう。
-</div>
 
 ### 練習2: 簡単なパターン作成
-
-<div class="step-container">
-<div class="step-number">ツールを使った作業練習</div>
+!!! example "ツールを使った作業練習"
 
 **四角形パターンの作成**:
 1. **Rectangle** ツールを選択（ツールバーまたは **「R」** キー）
@@ -434,12 +385,9 @@ BlenderでMarvelous Designerに近い操作感を得るには:
 
 !!! success "基本操作完了"
     これでMarvelous Designerの基本的な操作の流れが理解できました！
-</div>
 
 ### 練習3: プロパティ編集
-
-<div class="step-container">
-<div class="step-number">設定変更の練習</div>
+!!! example "設定変更の練習"
 
 **布の特性変更**:
 1. 作成した四角形を選択
@@ -454,12 +402,11 @@ BlenderでMarvelous Designerに近い操作感を得るには:
 
 !!! info "設定の効果"
     異なる布の種類を選ぶと、硬さや重さが変わり、シミュレーション結果も変わります。
-</div>
 
 ## ✅ 理解度チェック
 
-<div class="progress-checklist">
-<h4>Marvelous Designer インターフェース理解完了</h4>
+!!! check "理解度チェックリスト"
+    **Marvelous Designer インターフェース理解完了**
 
 - [ ] 5つの主要エリア（2D、3D、Object Browser、ツールバー、プロパティ）の場所と役割を理解した
 - [ ] 3Dビューポートの視点操作（回転、ズーム、パン）ができる
@@ -471,7 +418,6 @@ BlenderでMarvelous Designerに近い操作感を得るには:
 - [ ] シミュレーションの開始・停止ができた
 - [ ] Property Editor でプロパティを変更できた
 - [ ] 作成したレイアウトを保存した
-</div>
 
 ## 🔧 トラブルシューティング
 
@@ -512,7 +458,7 @@ Marvelous Designerの基本インターフェースをマスターしました�
 
 または、より詳しい概念を学びたい場合は:
 
-[3Dモデリング基本概念を学ぶ →](basic-concepts.md){ .md-button }
+[3Dモデリング基本概念を学ぶ →](../physics/fabric-properties.md){ .md-button }
 
 !!! success "インターフェースマスター完了！"
     お疲れ様でした！これでMarvelous Designerを効率的に使うための基礎が完成しました。実際の衣装制作でこれらの知識を活用していきましょう！

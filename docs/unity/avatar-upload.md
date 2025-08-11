@@ -13,6 +13,7 @@
 
 !!! info "事前準備"
     - [Unity統合プロジェクト設定](project-setup.md)が完了済み
+    - [FBXからVRChatまでの完全ワークフロー](fbx-to-vrchat-complete-guide.md)が完了済み
     - VRChatアカウントでログイン済み
     - VRChat Trust Rankが「New User」以上
     - Unity内でBuild & Testが成功済み

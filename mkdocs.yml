@@ -74,9 +74,8 @@ nav:
     - パフォーマンス最適化: physics/optimization.md
   - Unity統合:
     - Unityプロジェクト設定: unity/project-setup.md
-    - VRChat SDK3設定: unity/vrchat-sdk3.md
+    - FBXからVRChatまでの完全ワークフロー: unity/fbx-to-vrchat-complete-guide.md
     - アバターアップロード: unity/avatar-upload.md
-    - VRChat内テスト: unity/testing.md
   - リソース・参考資料:
     - 有用なリンク集: resources/useful-links.md
     - CLO-SET Connect・EveryWear: resources/clo-set-connect.md
