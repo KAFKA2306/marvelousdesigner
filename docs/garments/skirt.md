@@ -383,7 +383,7 @@
 
 **技術を深める**:
 
-[衣装物理学を極める →](../physics/simulation-settings.md){ .md-button }
+[物理特性を極める →](../physics/fabric-properties.md){ .md-button }
 
 ## 📚 学習成果と応用
 

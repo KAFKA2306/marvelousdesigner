@@ -434,15 +434,15 @@
 
 **次の挑戦**:
 
-[フォーマルウェア制作に挑戦 →](formal-wear.md){ .md-button .md-button--primary }
+[ドレス制作に挑戦 →](dress.md){ .md-button .md-button--primary }
 
-[季節物衣装制作に挑戦 →](seasonal-wear.md){ .md-button }
+[水着制作に挑戦 →](swimwear.md){ .md-button }
 
 **技術を極める**:
 
-[物理シミュレーション上級設定 →](../physics/simulation-settings.md){ .md-button }
+[物理特性詳細設定 →](../physics/fabric-properties.md){ .md-button }
 
-[Unity統合プロ技法 →](../unity/advanced-integration.md){ .md-button }
+[Unity統合ガイド →](../unity/project-setup.md){ .md-button }
 
 ## 📚 学習成果と応用範囲
 

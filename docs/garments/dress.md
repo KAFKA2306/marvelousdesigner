@@ -467,7 +467,7 @@
 [コミュニティ参加・作品公開 →](../resources/community.md){ .md-button .md-button--primary }
 
 **技術のさらなる深化**:
-[Unity高度技術習得 →](../unity/vrchat-sdk3.md){ .md-button }
+[Unity統合完全ガイド →](../unity/fbx-to-vrchat-complete-guide.md){ .md-button }
 
 **教育・指導への展開**:
 - 初心者への技術指導

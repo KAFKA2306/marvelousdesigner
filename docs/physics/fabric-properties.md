@@ -365,7 +365,7 @@
 
 次は、より詳細なシミュレーション設定や最適化テクニックを学びましょう：
 
-[シミュレーション詳細設定 →](simulation-settings.md){ .md-button .md-button--primary }
+[パフォーマンス最適化ガイド →](optimization.md){ .md-button .md-button--primary }
 
 [パフォーマンス最適化ガイド →](optimization.md){ .md-button }
 

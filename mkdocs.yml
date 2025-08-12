@@ -69,9 +69,15 @@ nav:
     - 水着: garments/swimwear.md
   - 物理設定・最適化:
     - 布の物理特性設定: physics/fabric-properties.md
-    - シミュレーション詳細設定: physics/simulation-settings.md
-    - 衝突検出の調整: physics/collision-detection.md
     - パフォーマンス最適化: physics/optimization.md
+  - 最適化・品質向上:
+    - Very Poor脱却完全ガイド: optimization/very-poor-escape.md
+    - パフォーマンス分析ツール: optimization/performance-analysis.md
+    - モバイル完全対応: optimization/mobile-compatibility.md
+  - 高度な技術・MD2025:
+    - MD2025新機能完全ガイド: advanced/md2025-features.md
+    - EveryWear統合ワークフロー: advanced/everywear-integration.md
+    - IK-Joint最適化: advanced/ik-joint-mapping.md
   - Unity統合:
     - Unityプロジェクト設定: unity/project-setup.md
     - FBXからVRChatまでの完全ワークフロー: unity/fbx-to-vrchat-complete-guide.md

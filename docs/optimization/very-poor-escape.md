@@ -515,10 +515,10 @@
 !!! tip "Very Poor脱却後の発展学習"
 
     **次に学ぶべき内容**:
-    1. **[高度物理シミュレーション](../physics/advanced-simulation.md)**: より自然な動作実現
-    2. **[プロ向け最適化テクニック](../advanced/professional-techniques.md)**: 業界標準手法習得
-    3. **[マルチファブリック統合](../advanced/multi-fabric-workflow.md)**: 複雑素材表現
-    4. **[BOOTH販売準備](../commercial/booth-sales-guide.md)**: 作品の商業化
+    1. **[MD2025新機能活用](../advanced/md2025-features.md)**: 最新技術での効率化実現
+    2. **[EveryWear統合ワークフロー](../advanced/everywear-integration.md)**: 自動最適化システム習得
+    3. **[IK-Joint最適化](../advanced/ik-joint-mapping.md)**: より自然な動作実現
+    4. **[高度物理シミュレーション](../physics/optimization.md)**: 物理演算品質向上
 
 ### コミュニティ貢献
 

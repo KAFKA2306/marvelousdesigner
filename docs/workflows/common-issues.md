@@ -93,6 +93,169 @@
     - 重要な段階でのFBXエクスポート保存
     ```
 
+### VRChat アバター・衣装統合の重大エラー
+
+??? question "🔴「配置点をアバターに合わせることができませんでした。AまたはTポーズでのみ正常に動作します」"
+    **症状**: Marvelous Designer 2025でアバター配置点の自動生成が失敗、フィッティングスーツが作成できない
+
+    **原因分析と対処法**:
+
+    **1. T-pose/A-pose 認識問題**:
+    ```
+    診断項目:
+    □ アバターが正確にT-pose（両腕水平、手のひら下向き）になっているか
+    □ 肩の角度が完全に水平（90度）になっているか
+    □ 手首が自然にまっすぐ伸びているか
+    □ 足が肩幅程度に開いているか
+
+    対処法（段階的）:
+    1. A-pose試行：腕を30-45度下げた姿勢に変更
+    2. BlenderでT-pose調整してからFBXエクスポート
+    3. MD内でAvatar Editor使用してポーズ手動調整
+    ```
+
+    **2. アバターサイズ・構造問題**:
+    ```
+    確認事項:
+    - アバター高さが2メートル以下
+    - 内蔵アバター（Feifei）とのサイズ比較
+    - ボーン命名規則がMD標準に準拠
+
+    修復手順:
+    1. Import時に「Automatically Add Arrangement Points」チェック
+    2. 異なるファイル形式試行（FBX → OBJ → Collada）
+    3. アーマチュア付き/無し両方でテスト
+    ```
+
+    **3. 手動配置点設定（回避策）**:
+    ```
+    手順:
+    1. Avatar Editor → IK Mapping Tab
+    2. 「Auto Mapping」失敗時は手動でジョイント接続
+    3. Display → 2D Pattern → Show Garment Fitting Suite で確認
+    4. 必要に応じてArrangement Point手動追加
+    ```
+
+    **MD 2025 特有の注意点**:
+    ```
+    - バージョン2024.0.149以降でカスタムアバターの配置点問題報告
+    - FBXファイル内に重複ジョイント名があるとIK Mapping機能不具合
+    - DAZ Genesis 8/9、Mixamo、Metahuman等は自動対応
+    ```
+
+??? question "🔴「EveryWear でアバターのリギング情報を衣装に転送できませんでした」"
+    **症状**: EveryWear機能でのボーンウェイト転送が失敗、衣装がアバターの動きに追従しない
+
+    **原因と段階的対処法**:
+
+    **Level 1: 前提条件確認**:
+    ```
+    必須要件チェック:
+    □ フィッティングスーツが正常に作成済み
+    □ アバターが適切なヒューマノイドリグを保持
+    □ 衣装メッシュが適切にアバター上に配置済み
+    □ MD内で物理シミュレーションが安定動作
+
+    EveryWear要件:
+    - 2Dパターンシステムベースの衣装のみ対応
+    - カスタム衣装は「Garment Fitting Suite」必須
+    ```
+
+    **Level 2: リギング品質確認**:
+    ```
+    アバターリグ診断:
+    1. 必須ボーン存在確認（Head、Hand、Foot）
+    2. ボーン階層構造確認（Shoulder → Chest直下）
+    3. Neck → Chest直下配置確認
+    4. Upper Chestボーン未割り当て確認（VRChat用）
+
+    衣装メッシュ品質:
+    - トポロジーがアバターメッシュと適合
+    - 極端な変形・ストレッチ箇所なし
+    - Self-collision問題なし
+    ```
+
+    **Level 3: 代替リギング手法**:
+    ```
+    手動リギング手順:
+    1. OBJファイルとしてエクスポート（リギング無し）
+    2. Blender/Maya等でアバタースケルトン転送
+    3. ウェイトペインティング手動実行
+    4. FBXでUnityに再インポート
+
+    注意事項:
+    - MD物理特性は失われる
+    - Blenderでの布物理再設定推奨
+    ```
+
+    **トラブルシューティング**:
+    ```
+    よくある問題:
+    - 「EveryWear refuses to open」→ MD再起動で解決多数
+    - ボーン重複エラー → FBXファイル内ボーン名確認
+    - 部分的な転送失敗 → 該当パターンの物理設定リセット
+    ```
+
+??? question "🔴「Unity で衣装がリグに追従しない（Modular Avatar 使用時）」"
+    **症状**: Unity + Modular Avatarで衣装メッシュがアニメーションに反応しない、変形しない
+
+    **原因別対処法**:
+
+    **1. Skinned Mesh Renderer 設定問題**:
+    ```
+    診断チェック:
+    □ Skinned Mesh Rendererコンポーネント存在
+    □ Root Boneが正しいアバターボーンを参照
+    □ Bonesリストにアバターボーン群が設定済み
+    □ Meshに適切なBone Weightsが含まれている
+
+    修復手順:
+    1. Inspector → Skinned Mesh Renderer
+    2. Root Bone → アバターのHips/Pelvis設定
+    3. Bounds → Center and Extents 適切に調整
+    4. Update When Offscreen → チェックで一時的テスト
+    ```
+
+    **2. Modular Avatar Armature Link 問題**:
+    ```
+    設定確認:
+    - 衣装のアーマチュア骨名がアバターと完全一致
+    - Armature Link → Merge Type適切設定
+    - Advanced Options → Align Rotation のチェック状態
+
+    よくある解決法:
+    1. Align Rotation チェック外す（既存の骨回転保持）
+    2. 衣装専用にアバター骨を複製して使用
+    3. VRCFury Linking Clothes機能の代替使用
+    ```
+
+    **3. Bone Weight / Mesh 最適化問題**:
+    ```
+    Unity最適化設定:
+    問題: 最適化メッシュは骨順序でなく骨名で動作
+    対処: Optimize Game Objects → チェック外して検証
+
+    手動ウェイト修正:
+    1. Blender等でウェイトペインティング再実行
+    2. 問題箇所の骨影響度手動調整
+    3. FBX再エクスポート時のウェイト保持確認
+    ```
+
+    **4. MD → Unity パイプライン最適化**:
+    ```
+    推奨ワークフロー:
+    1. MDでOBJエクスポート（リギング無し）
+    2. Blenderでアバター骨構造転送
+    3. ウェイトペインティング実行
+    4. Modular Avatar用にFBXエクスポート
+    5. Unity内でArmature Link設定
+
+    品質確保:
+    - VRChat Performance Rating確認
+    - Animation Playback テストで動作検証
+    - 複数ポーズでの変形確認
+    ```
+
 ### Unity・VRChat SDK 重大エラー
 
 ??? question "🔴「VRChat SDK3が認識されない・メニューが表示されない」"
