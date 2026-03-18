@@ -108,6 +108,61 @@
   color: #333;
 }
 
+.md-language-switch {
+  position: relative;
+}
+
+.md-language-switch__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  padding: 0;
+}
+
+.md-language-switch__toggle svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.md-language-switch__menu {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  min-width: 8.5rem;
+  padding: 0.35rem;
+  border-radius: 0.6rem;
+  background: var(--md-default-bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.16);
+  z-index: 5;
+}
+
+[data-md-color-scheme="slate"] .md-language-switch__menu {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+.md-language-switch__option {
+  display: block;
+  padding: 0.45rem 0.65rem;
+  border-radius: 0.4rem;
+  color: var(--md-default-fg-color);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.md-language-switch__option:hover {
+  background: rgba(233, 30, 99, 0.08);
+}
+
+.md-language-switch__option.is-current {
+  color: var(--md-primary-fg-color);
+  background: rgba(233, 30, 99, 0.12);
+}
+
 /* レスポンシブ調整 */
 @media screen and (max-width: 768px) {
   .md-content {
@@ -117,5 +172,14 @@
   .step-container {
     margin: 1rem 0;
     padding: 0.8rem;
+  }
+
+  .md-language-switch__menu {
+    right: -0.25rem;
+    min-width: 7.8rem;
+  }
+
+  .md-language-switch__option {
+    font-size: 0.68rem;
   }
 }
