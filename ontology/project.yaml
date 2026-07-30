@@ -1,0 +1,81 @@
+project:
+  id: kafka:marvelousdesigner
+  name: VRChat Garment Production Guide
+  repository: https://github.com/KAFKA2306/marvelousdesigner
+  pages: https://kafka2306.github.io/marvelousdesigner/
+  version: 0.1.0
+  updated: 2026-07-30
+  core_ontology: https://raw.githubusercontent.com/KAFKA2306/know/main/ontology/causal-evidence-core.yaml
+  schema: https://raw.githubusercontent.com/KAFKA2306/know/main/ontology/project.schema.json
+
+purpose:
+  problem: Teach a reproducible garment-production workflow from pattern design through VRChat integration while distinguishing instruction, software behavior, measured result, and quality judgment.
+  intended_decisions: [publish_lesson, revise, mark_version_specific, require_test, deprecate]
+  success_conditions:
+    - Each technical instruction identifies applicable software, version context, input state, expected result, and verification method.
+    - Structural validity, avatar fit, visual quality, performance, and runtime behavior remain separate completion claims.
+    - Version-specific or unverified instructions are labeled rather than presented as universally valid.
+  falsification_conditions:
+    - A tutorial completion claim lacks a reproducible artifact or verification step.
+    - Software-version-dependent behavior is presented as timeless.
+    - Import success is represented as proof of product-level fit or visual quality.
+
+scope:
+  included: [patterns, garments, fabric settings, simulation, retopology, UVs, skinning, Unity integration, VRChat runtime, lessons, checks]
+  excluded: [redistributed commercial avatars, unsupported professional-quality claims, vendor documentation copied without permission]
+  temporal: Software version, lesson revision, test date, and publication date are explicit.
+  abstraction_level: Evidence-backed instructional knowledge for VRChat garment production.
+
+competency_questions:
+  - Which software version, garment stage, and input assumptions does an instruction require?
+  - What observable result proves that a step succeeded?
+  - Is a statement vendor-documented, experimentally verified, instructional judgment, or aesthetic guidance?
+  - Which tests support fit, deformation, performance, and runtime claims?
+  - Which lessons are current, version-specific, unverified, or deprecated?
+
+domain_mapping:
+  System: GarmentProductionLearningSystem
+  State: [pattern state, simulation state, mesh state, skinning state, Unity state, runtime state, lesson state]
+  Action: [draft pattern, sew, simulate, retopologize, unwrap, weight, import, configure, test, publish lesson]
+  Process: [garment design, simulation, mesh preparation, avatar integration, runtime validation, documentation]
+  Observation: [software output, mesh statistic, render, pose result, performance metric, runtime result]
+  Model: [pattern method, fabric model, skinning model, optimization guideline, learning sequence]
+  Requirement: [version context, reproducibility, rights compliance, stage-specific evidence, quality-claim separation]
+  Claim: [step success, structural validity, avatar fit, visual quality, performance status, runtime compatibility]
+  Evidence: [project file, screenshot, settings record, mesh audit, pose test, Unity log, runtime check]
+  Decision: [publish_lesson, revise, mark_version_specific, require_test, deprecate]
+
+claims_and_evidence:
+  assertion_types: [VendorDocumentedFact, ExperimentalObservation, Instruction, CalculatedValue, AestheticJudgment, CompatibilityClaim, DecisionAssertion]
+  required_evidence:
+    VendorDocumentedFact: [official source URL, software version or document date]
+    ExperimentalObservation: [input artifact, procedure, environment, observed result]
+    Instruction: [prerequisites, steps, expected result, verification method]
+    CompatibilityClaim: [target environment, artifact version, import and runtime evidence]
+  unknown_policy: Missing version, artifact, procedure, or verification remains require_test and cannot support a universal or product-quality claim.
+
+decision_rules:
+  - id: publish-instruction
+    when: Prerequisites, procedure, expected result, version context, and verification are present.
+    result: publish_lesson
+  - id: version-boundary
+    when: Behavior depends on a specific software or SDK version.
+    result: mark_version_specific
+  - id: product-quality-gate
+    when: Fit, visual, pose, performance, and runtime evidence all exist for the target avatar and artifact.
+    result: accepted_product_quality_claim
+  - id: missing-evidence
+    when: A completion or compatibility claim lacks stage-appropriate evidence.
+    result: require_test
+
+provenance:
+  sources: [official software documentation, VRChat documentation, retained project artifacts, documented experiments]
+  generated_artifacts: [MkDocs lessons, diagrams, checklists, example project outputs, audit records]
+  agents: [author, software tools, validation scripts, MkDocs build, GitHub Actions, human reviewer]
+  lineage: Each material instruction and claim links to software version, source or experiment, artifact, procedure, and review state.
+
+validation:
+  structural: Validate lesson metadata, prerequisites, software versions, artifact references, links, and checklists.
+  semantic: Separate documented facts, experiments, instructions, aesthetic judgments, compatibility, and product-quality claims.
+  evidence: Verify project artifacts, settings, mesh audits, pose tests, Unity logs, and runtime evidence where applicable.
+  publication: MkDocs build, link checks, and live Pages verification are required; unsupported completion percentages are not evidence.
