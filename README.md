@@ -1,57 +1,84 @@
 # VRChat衣装制作ガイド
 
-Marvelous Designer、Blender、Unity、VRChat向けの衣装制作工程を段階別に整理したMkDocsプロジェクトです。
+**公開サイト:** https://kafka2306.github.io/marvelousdesigner/
 
-- 公開サイト: https://kafka2306.github.io/marvelousdesigner/
+Marvelous Designer、Blender、Unity、VRChatを使い、衣装のパターン設計から実動作確認までを段階別に学ぶためのMkDocs教材です。
 
-## 因果・証拠オントロジー
+操作方法だけでなく、各工程で何を入力し、何を確認し、どの状態なら次へ進めるかを明示します。FBXが出力できた、Unityへインポートできたというだけでは完成扱いにしません。
 
-上位システムは `GarmentProductionLearningSystem` です。
+## 制作の流れ
 
 ```text
-要件
-→ パターン設計
-→ シミュレーション
-→ メッシュ整形
-→ スキニング
-→ Unity統合
-→ ポーズ・性能・実動作検証
-→ 教材公開
+衣装要件を決める
+  → 2Dパターンを設計
+  → 布シミュレーション
+  → メッシュを整理
+  → UV・マテリアル・法線を調整
+  → リトポロジーとスキニング
+  → Unityへ統合
+  → ポーズ・貫通・性能を検証
+  → VRChat内で実動作確認
+  → 教材・成果物を公開
 ```
 
-操作手順、構造検査、対象モデルへの適合、外観評価、性能評価、Unity上の確認、実動作確認は別の主張として扱います。インポート成功だけで最終品質を証明したことにはしません。対象ソフトウェア、版、入力、設定、期待結果、検証方法が欠ける記述は `require_test` とします。
-
-- [プロジェクト・オントロジー](ontology/project.yaml)
-- [共通因果・証拠オントロジー](https://github.com/KAFKA2306/know/blob/main/ontology/causal-evidence-core.yaml)
-
 ## 主な教材
+
+### 衣装別
 
 - [Tシャツ](https://kafka2306.github.io/marvelousdesigner/garments/t-shirt/)
 - [スカート](https://kafka2306.github.io/marvelousdesigner/garments/skirt/)
 - [カジュアルウェア](https://kafka2306.github.io/marvelousdesigner/garments/casual-wear/)
 - [ワンピース](https://kafka2306.github.io/marvelousdesigner/garments/one-piece/)
 - [ドレス](https://kafka2306.github.io/marvelousdesigner/garments/dress/)
+
+### 技術別
+
 - [布物性](https://kafka2306.github.io/marvelousdesigner/physics/fabric-properties/)
 - [最適化](https://kafka2306.github.io/marvelousdesigner/physics/optimization/)
-- [Unity統合](https://kafka2306.github.io/marvelousdesigner/unity/project-setup/)
+- [Unityプロジェクト設定](https://kafka2306.github.io/marvelousdesigner/unity/project-setup/)
 
-## 記述区分
+## この教材で区別する情報
 
-- `VendorDocumentedFact`: 公式文書に基づく事項
-- `ExperimentalObservation`: 特定条件で確認した結果
-- `Instruction`: 前提、操作、期待結果、検証方法を持つ手順
-- `CalculatedValue`: 計算または測定した値
-- `AestheticJudgment`: 人間による外観評価
-- `CompatibilityClaim`: 対象環境と証拠を伴う互換性主張
+- `VendorDocumentedFact` — ソフトウェア公式資料に記載された仕様
+- `ExperimentalObservation` — 特定条件で実際に確認した結果
+- `Instruction` — 前提、操作、期待結果、検証方法を持つ手順
+- `CalculatedValue` — 計算または測定した値
+- `AestheticJudgment` — 人間による外観評価
+- `CompatibilityClaim` — 対象環境と証拠を伴う互換性主張
+
+機械可読な定義:
+
+- [プロジェクト・オントロジー](ontology/project.yaml)
+- [共通因果・証拠オントロジー](https://github.com/KAFKA2306/know/blob/main/ontology/causal-evidence-core.yaml)
 
 ## 教材の受入条件
 
-1. 対象ソフトウェアと版の範囲が明示されている。
-2. 入力状態と必要アセットが明示されている。
-3. 手順が再現可能である。
-4. 成功時の観測可能な結果が定義されている。
-5. 失敗条件と確認方法が定義されている。
-6. 互換性や品質の主張には、対象成果物と検証証拠がある。
-7. MkDocsビルドとリンク検査に合格する。
+1. 対象ソフトウェアとバージョンが書かれている
+2. 開始時の状態と必要アセットが分かる
+3. 手順を別の環境でも再実行できる
+4. 成功時に観測できる結果が定義されている
+5. 失敗条件と確認方法が書かれている
+6. 互換性や品質の主張に対象成果物と検証証拠がある
+7. MkDocsビルドとリンク検査を通過する
 
-詳細な要求、反証条件、主張型、証拠、判定規則は `ontology/project.yaml` を正とします。
+## ローカル確認
+
+リポジトリ内の設定を正として依存関係を導入し、MkDocsの開発サーバーを起動します。
+
+```bash
+git clone https://github.com/KAFKA2306/marvelousdesigner.git
+cd marvelousdesigner
+pip install -r requirements.txt
+mkdocs serve
+```
+
+依存関係やコマンドが変更されている場合は、`pyproject.toml`、`requirements.txt`、`Taskfile.yml`のうち実在する設定を優先してください。
+
+## 注意
+
+- ソフトウェアのUIや機能はバージョンによって変わります
+- 対象アバターごとに体型、ボーン、シェイプキー、規約が異なります
+- インポート成功は外観品質、動作品質、販売品質の証明ではありません
+- 購入アセットやアバターデータの再配布は各ライセンスに従ってください
+
+**README最終監査:** 2026-08-01
