@@ -1,0 +1,43 @@
+schema_version: instructor-cohort.v1
+pack_revision: 1
+repository_revision: 53d1ace3e61de40cb3f58a4a5795d04ed9d478c9
+status: PREVIEW
+software:
+  marvelous_designer:
+    baseline: "2024.2+ / 2025.x"
+    exact_version_policy: RECORD_BEFORE_COHORT
+    source: ../setup/software-check.md
+  blender:
+    baseline: "3.0+"
+    exact_version_policy: RECORD_IF_USED
+    source: ../setup/software-check.md
+  unity:
+    baseline: "2022.3.22f1"
+    exact_version_policy: MUST_MATCH_BASELINE
+    source: https://creators.vrchat.com/sdk/upgrade/current-unity-version/
+  vrchat_sdk:
+    baseline: CREATOR_COMPANION_COMPATIBLE
+    exact_version_policy: RECORD_BEFORE_COHORT
+    source: https://creators.vrchat.com/sdk/
+lessons:
+  - id: lesson-1-pattern-evidence
+    file: lessons.md
+    submission: pattern_and_simulation_evidence
+  - id: lesson-2-simulation-fit
+    file: lessons.md
+    submission: fit_before_after_evidence
+  - id: lesson-3-mesh-unity
+    file: lessons.md
+    submission: unity_handoff_evidence
+  - id: lesson-4-runtime-review
+    file: lessons.md
+    submission: runtime_review_evidence
+rights:
+  redistributed_commercial_assets: false
+  redistributed_avatars: false
+  learner_must_hold_asset_rights: true
+commercial_evidence:
+  paid_cohorts: 0
+  learners: 0
+  completed_cohorts: 0
+  evidence: []
