@@ -19,14 +19,12 @@ theme:
     - content.code.copy
     - content.tabs.link
   palette:
-    # ライトモード
     - scheme: default
       primary: pink
       accent: pink
       toggle:
         icon: material/brightness-7
         name: ダークモードに切り替え
-    # ダークモード
     - scheme: slate
       primary: pink
       accent: pink
@@ -39,7 +37,6 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
-# ナビゲーション構造
 nav:
   - ホーム: index.md
   - 環境設定:
@@ -82,6 +79,12 @@ nav:
     - Unityプロジェクト設定: unity/project-setup.md
     - FBXからVRChatまでの完全ワークフロー: unity/fbx-to-vrchat-complete-guide.md
     - アバターアップロード: unity/avatar-upload.md
+  - 講師向けInstructor Pack:
+    - 概要・PoC相談: instructor/index.md
+    - 4回lesson plan: instructor/lessons.md
+    - 学生提出テンプレート: instructor/submission-template.md
+    - 講師用rubric: instructor/rubric.md
+    - 30分teacher preview: instructor/demo.md
   - リソース・参考資料:
     - 有用なリンク集: resources/useful-links.md
     - CLO-SET Connect・EveryWear: resources/clo-set-connect.md
@@ -89,7 +92,6 @@ nav:
     - 上級者向けリソース: resources/advanced-resources.md
     - 更新履歴: resources/update-log.md
 
-# プラグイン設定
 plugins:
   - search:
       lang: ja
@@ -98,7 +100,6 @@ plugins:
       locale: ja
       timezone: Asia/Tokyo
 
-# Markdown拡張機能
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -125,14 +126,12 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.emoji
 
-# 追加CSS・JavaScript
 extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
   - javascripts/extra.js
 
-# サイト情報
 extra:
   generator: false
   social:
@@ -146,10 +145,8 @@ extra:
     provider: google
     property: G-XXXXXXXXXX
 
-# 著作権情報
 copyright: Copyright &copy; 2024-2025 VRChat Garment Creation Guide
 
-# リポジトリ情報（GitHub Pages用）
 repo_url: https://github.com/username/vrchat-garment-guide
 repo_name: vrchat-garment-guide
 edit_uri: edit/main/docs/

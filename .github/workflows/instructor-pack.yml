@@ -1,0 +1,56 @@
+name: Instructor Cohort Pack
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/instructor/**'
+      - 'metrics/instructor-cohort-kpi.json'
+      - 'scripts/validate_instructor_pack.py'
+      - 'tests/test_instructor_pack.py'
+      - 'requirements.txt'
+      - 'mkdocs.yml'
+      - '.github/workflows/instructor-pack.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/instructor/**'
+      - 'metrics/instructor-cohort-kpi.json'
+      - 'scripts/validate_instructor_pack.py'
+      - 'tests/test_instructor_pack.py'
+      - 'requirements.txt'
+      - 'mkdocs.yml'
+      - '.github/workflows/instructor-pack.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install validation dependencies
+        run: pip install PyYAML mkdocs mkdocs-material mkdocs-git-revision-date-localized-plugin
+      - name: Compile validator
+        run: python -m py_compile scripts/validate_instructor_pack.py tests/test_instructor_pack.py
+      - name: Validate contract
+        run: python scripts/validate_instructor_pack.py
+      - name: Run focused tests
+        run: python -m unittest tests.test_instructor_pack -v
+      - name: Build MkDocs
+        run: mkdocs build
+      - name: Record post-build workspace changes
+        if: always()
+        run: git status --porcelain --untracked-files=all || true
+      - name: Remove generated output and runtime residue
+        if: always()
+        run: |
+          git restore --worktree -- .
+          git clean -fdx
+      - name: Clean checkout audit
+        if: always()
+        run: test -z "$(git status --porcelain --untracked-files=all)"
