@@ -12,6 +12,7 @@ lxml>=4.9.0
 html5lib>=1.1
 markdown>=3.4.0
 pymdown-extensions>=10.0.0
+PyYAML>=6.0
 
 # Pre-commit hooks
 pre-commit>=3.3.0
