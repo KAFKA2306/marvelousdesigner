@@ -45,7 +45,12 @@ jobs:
         run: mkdocs build
       - name: Remove generated output
         if: always()
-        run: rm -rf site __pycache__ scripts/__pycache__ tests/__pycache__
+        run: |
+          rm -rf site .cache .pytest_cache
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+          find . -type f \( -name '*.pyc' -o -name '*.pyo' \) -delete
       - name: Clean checkout audit
         if: always()
-        run: test -z "$(git status --porcelain --untracked-files=all)"
+        run: |
+          git status --porcelain --untracked-files=all
+          test -z "$(git status --porcelain --untracked-files=all)"
