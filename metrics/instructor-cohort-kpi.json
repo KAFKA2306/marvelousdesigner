@@ -1,0 +1,19 @@
+{
+  "schema_version": "instructor-cohort-kpi.v1",
+  "status": "NOT_STARTED",
+  "window_days": 60,
+  "metrics": {
+    "qualified_inquiries": 0,
+    "instructor_demos": 0,
+    "paid_poc_cohorts": 0,
+    "poc_learners": 0,
+    "final_submission_rate": null,
+    "instructor_reuse_intent": 0,
+    "repeat_or_referral": 0
+  },
+  "evidence": [],
+  "notes": [
+    "Only observed commercial or cohort events may be recorded.",
+    "Do not infer schools, learner counts, submissions, revenue, or continuation intent."
+  ]
+}
