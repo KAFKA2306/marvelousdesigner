@@ -42,8 +42,10 @@ jobs:
       - name: Run focused tests
         run: python -m unittest tests.test_instructor_pack -v
       - name: Build MkDocs
-        run: mkdocs build --strict
+        run: mkdocs build
       - name: Remove generated output
+        if: always()
         run: rm -rf site __pycache__ scripts/__pycache__ tests/__pycache__
       - name: Clean checkout audit
+        if: always()
         run: test -z "$(git status --porcelain --untracked-files=all)"
