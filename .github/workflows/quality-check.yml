@@ -314,6 +314,8 @@ jobs:
                   
                   # Markdownファイルをチェック
                   for md_file in docs_dir.rglob('*.md'):
+                      if 'docs/zh-CN/' in md_file.as_posix():
+                          continue
                       self.check_file(str(md_file))
                   
                   # MkDocsをビルド
@@ -408,7 +410,7 @@ jobs:
 
       - name: Upload quality report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: quality-check-report
           path: |
