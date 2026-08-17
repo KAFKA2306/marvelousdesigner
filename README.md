@@ -1,5 +1,8 @@
 # VRChat衣装制作ガイド
 
+[![Build and Deploy Documentation](https://github.com/KAFKA2306/marvelousdesigner/actions/workflows/docs.yml/badge.svg)](https://github.com/KAFKA2306/marvelousdesigner/actions/workflows/docs.yml)
+[![Documentation Quality Check](https://github.com/KAFKA2306/marvelousdesigner/actions/workflows/quality-check.yml/badge.svg)](https://github.com/KAFKA2306/marvelousdesigner/actions/workflows/quality-check.yml)
+
 **公開サイト:** https://kafka2306.github.io/marvelousdesigner/
 
 Marvelous Designer、Blender、Unity、VRChatを使い、衣装のパターン設計から実動作確認までを段階別に学ぶためのMkDocs教材です。
