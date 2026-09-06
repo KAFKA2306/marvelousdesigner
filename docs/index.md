@@ -6,6 +6,8 @@
 
 大丈夫です。このガイドは**完全に初めての方**のために作られています。プログラミングの知識も、3Dモデリングの経験も必要ありません。一歩ずつ、丁寧に進めていけば、必ずあなたの理想の衣装が完成します。
 
+[最初の15分：ソフトウェア確認に進む →](setup/software-check.md){ .md-button .md-button--primary }
+
 <div class="step-container">
 <div class="step-number">✨ あなたが作れるようになるもの</div>
 
@@ -135,11 +137,7 @@
 <div class="step-container">
 <div class="step-number">🚀 最初の一歩</div>
 
-<p><strong>準備はできましたか？</strong> まずは<a href="setup/software-check/">ソフトウェアの確認</a>から始めて、あなたのVRChat衣装制作の旅をスタートしましょう！</p>
-
-<p><strong>不安や疑問があっても大丈夫。</strong> 一歩ずつ、一緒に進んでいきます。</p>
-
-<p><a href="setup/software-check/" class="md-button md-button--primary">ソフトウェア確認に進む →</a></p>
+<p><strong>準備はできましたか？</strong> 冒頭の「最初の15分」からソフトウェア確認を始め、そのまま推奨学習パスを進めてください。</p>
 </div>
 
 ---
